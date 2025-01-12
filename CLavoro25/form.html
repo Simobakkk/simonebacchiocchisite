@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sito di prova
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: cornflowerblue;
+            }
+            h1{
+                font-family: calibri;
+                color: black;
+                font-size: 50px;       
+            }
+            div{
+                border-radius: 10px;
+                background-color: cornflowerblue;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 5px;
+                padding-bottom: 10px;
+            }
+            h2{
+                color: grey;
+                font-family: calibri;
+            }
+            input[type="text"]{
+                width: 100%;
+                height: 20px;
+            }
+            input[type="submit"]{
+                width: 100%;
+                background-color: cornflowerblue;
+                font-family: calibri;
+                border: none;
+                height: 34px;
+                border-radius: 4px;
+                color: white;
+                font-size: 20px;
+                transition: transform .2s;
+            }
+            input[type="submit"]:hover{
+                transition: scale(1.3);
+                font-size: 24px;
+                background-color: black;
+                color: white;
+            }
+        </style>
+        <script>
+            function stampa(){
+                var print1 = document.getElementById("name").value;
+                document.getElementById("testo1").innerHTML = print1;
+                var print2 = document.getElementById("surname").value;
+                document.getElementById("testo2").innerHTML = print2;
+                var print3 = document.getElementById("address").value;
+                document.getElementById("testo3").innerHTML = print3;
+                var print4 = document.getElementById("city").value;
+                document.getElementById("testo4").innerHTML = print4;
+                var print5 = document.getElementById("cap").value;
+                document.getElementById("testo5").innerHTML = print5;
+            }
+        </script>
+    </head>
+    <body>
+        <br>
+        <center>
+            <hr width="80%" color="white" size="10" style="border-radius: 5px;"><br>
+            <div align="center" style="width: 40%; padding-top: 20px; padding-bottom: 20px; background-color: white; box-shadow: 3px 0px 3px 0px;">
+                <form method="get">
+                    <label align="left">
+                        <h2>
+                            Nome
+                        </h2>
+                    </label>
+                    <input type="text" id="name" name="name" required>
+                    <label align="left">
+                        <h2>
+                            Cognome
+                        </h2>
+                    </label>
+                    <input type="text" id="surname" name="surname" required>
+                    <label align="left">
+                        <h2>
+                            Indirizzo
+                        </h2>
+                    </label>
+                    <input type="text" id="address" name="address" required>
+                    <label align="left">
+                        <h2>
+                            Città
+                        </h2>
+                    </label>
+                    <input type="text" id="city" name="city" required>
+                    <label align="left">
+                        <h2>
+                            CAP
+                        </h2>
+                    </label>
+                    <input type="text" id="cap" name="cap" required>
+                    <br><br>
+                    <input type="submit" value="Invia" onclick="stampa()">
+                </form>
+            </div>
+            <br>
+            <hr width="80%" color="white" size="10" style="border-radius: 5px;">
+            <div style="padding-top: 30px;">
+                <table cellpadding="10" cellspacing="10" width="60%" height="100px;" style="background-color: white; border-radius: 4px; box-shadow: 3px 0px 3px 0px;">
+                    <tr>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;">
+                                    Nome
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;">
+                                    Cognome
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;">
+                                    Indirizzo
+                                </h2>
+                            </div>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;" id="testo1">
+                                    -
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;" id="testo2">
+                                    -
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;" id="testo3">
+                                    -
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;">
+                                    Città
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;">
+                                    CAP
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;" id="testo4">
+                                    -
+                                </h2>
+                            </div>
+                        </td>
+                        <td align="center">
+                            <div>
+                                <h2 style="color: white; font-size: 15px;" id="testo5">
+                                    -
+                                </h2>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </body>
+</html>

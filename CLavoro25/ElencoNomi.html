@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Elenco log-in 
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        body{
+            background: linear-gradient(to right, blue, black);
+            margin-top: 40px;
+        }
+        .inputDiv{
+            width: 40%;
+            padding-right: 20px;
+            padding-left: 50px;
+            background-color: white;
+            height: 550px;
+            border-radius: 40px;
+            float: left;
+        }
+        .styleDiv{
+            width: 40%;
+            padding-right: 30px;
+            background-color: cornflowerblue;
+            height: 550px;
+            border-radius: 40px;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mainDiv{
+            background-color: cornflowerblue;
+            border-radius: 40px;
+            width: 75%;
+            height: 550px;
+        }
+        .elenco{
+            background-color: white;
+            padding-top: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 30px;
+            width: 55%;
+            height: 350px;
+            max-height: 500px;
+            border-radius: 10px;
+        }
+        .elencoEffettivo{
+            max-height: 250px;
+            overflow: scroll;
+            width: 100%;
+        }
+        span{
+            color: black;
+        }
+        h1{
+            font-size: 40px;
+            font-family: calibri;
+            color: black;
+        }
+        input[type="inputElement"]{
+            width: 60%;
+            height: 25px;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: width 0.4s ease-in-out;
+        }
+        input[type="inputElement"]:focus{
+            width: 80%;
+            border-color: cornflowerblue;
+        }
+        input[type="submit"]{
+            width: 30%;
+            height: 38px;
+            border: 3px solid white;
+            background: linear-gradient(to right, blue, cornflowerblue);
+            border-radius: 10px;
+            transition: background-color 0.2s ease-in-out;
+            transition: width 0.3s ease-in-out;
+            font-family: sans-serif;
+            color: white;
+            font-size: 20px;
+        }
+        input[type="submit"]:hover{
+            background-color: black;
+            color: white;
+            width: 40%;
+        }
+        label{
+            font-size: 18px;
+            color: grey;
+            font-family: monospace;
+        }
+        input[type="reset"]{
+            background-color: white;
+            color: black;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            border: none;
+            transition: font-size 0.2s ease-in-out;
+        }
+        input[type="reset"]:hover{
+            font-size: 45px;
+        }
+    </style>
+    <script>
+        let contUtenti = 0;
+        let s = ""
+        function resettaElenco(){
+            document.getElementById("stampa").innerHTML = "";
+            contUtenti = 0;
+            s = "";
+        }
+        function stampa(){
+            const utenti = []
+            const dati = [];
+            const cDiInput = ["name", "surname", "age", "city", "cap"];
+            const campiITA = ["Nome", "Cognome", "Età", "Residenza", "CAP"];
+            for(let i=0; i<=4; i++){
+                dati.push(document.getElementById(cDiInput[i]).value);
+            }
+            utenti[contUtenti] = dati;
+            for(let i=0; i<dati.length; i++){
+                if(i==0){
+                    s+="Utente n°"+contUtenti+"<br><br>";
+                }
+                s+=campiITA[i]+": "+utenti[contUtenti][i]+"<br>";
+                if(i==dati.length-1){
+                    s+="<br>";
+                }
+            }
+            contUtenti++;
+            document.getElementById("stampa").innerHTML = s;
+            for(let i=0; i<=4; i++){
+                document.getElementById(cDiInput[i]).value = "";
+            }
+            dati = [];
+        }
+    </script>
+    <body>
+        <center>
+            <div class="mainDiv" align="right">
+                <div class="styleDiv" align="left">
+                    <h1 style="color: white;">
+                        Inserisci le tue<br><span><b>Informazioni anagrafiche</b></span>
+                    </h1>
+                </div> 
+                <div class="inputDiv" align="left">
+                    <h1>
+                        Effettua il log in
+                    </h1>
+                    <label><b>Nome</b></label><br>
+                    <input type="inputElement" id="name" name="name" required><br><br>
+                    <label><b>Cognome</b></label><br>
+                    <input type="inputElement" id="surname" name="name" required><br><br>
+                    <label><b>Età</b></label><br>
+                    <input type="inputElement" id="age" name="name" required><br><br>
+                    <label><b>Residenza</b></label><br>
+                    <input type="inputElement" id="city" name="name" required><br><br>
+                    <label><b>CAP</b></label><br>
+                    <input type="inputElement" id="cap" name="name" required><br><br>
+                    <br><input type="submit" value="Invia" onclick="stampa()">
+                </div>
+            </div><br><br>
+            <div class="elenco" align="center">
+                <div style="float: left; width: 100%;" align="left">
+                    <input type="reset" value="<" onclick="resettaElenco()">
+                </div>
+                <h1 style="font-size: 32px;">
+                    Elenco dati degli utenti
+                </h1>
+                <hr size="3" color="black" width="60%">
+                <div  class = "elencoEffettivo">
+                    <h1 id="stampa" style="font-size: 20px;"></h1>
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
