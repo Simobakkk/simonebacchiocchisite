@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Elementi base di HTML
+        </title>
+    </head>
+    <style>
+        .mainDiv{
+            height: 340px;
+            background-color: white;
+            border: 4px solid black;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+        }
+        body{
+            background-color: white;
+        }
+        span{
+            color: cornflowerblue;
+        }
+        span[type="1"]{
+            color: black;
+        }
+        h1{
+            font-size: 50px;
+            font-family: calibri;
+            color: black;
+        }
+        h2{
+            color: white;
+            font-size: 25px;
+            font-family: calibri;
+        }
+        .divLeft{
+            width: 50%;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .divRight{
+            width: 50%;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+            height: 340px;
+            border-radius: 34px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .generalDiv{
+            width: 100%;
+            height: 500px;
+            padding-bottom: 20px;
+            padding-top: 25px;
+        }
+        input[type="inputElement"]{
+            width: 30%;
+            height: 25px;
+            border: 2px solid black;
+            border-radius: 5px;
+            transition: width 0.4s ease-in-out;
+        }
+        input[type="inputElement"]:focus{
+            width: 50%;
+            border-color: cornflowerblue;
+        }
+        input[type="submit"]{
+            width: 20%;
+            height: 38px;
+            border: 3px solid white;
+            background: linear-gradient(to right, blue, cornflowerblue);
+            border-radius: 10px;
+            transition: background-color 0.2s ease-in-out;
+            transition: width 0.3s ease-in-out;
+            font-family: sans-serif;
+            color: white;
+            font-size: 20px;
+        }
+        input[type="submit"]:hover{
+            background-color: black;
+            color: white;
+            width: 30%;
+        }
+        label{
+            font-size: 18px;
+            color: grey;
+            font-family: monospace;
+        }
+        td{
+            border-radius: 10px;
+            border: 4px solid white;
+        }
+    </style>
+    <body>
+        <div class="mainDiv">
+            <div class="divLeft">
+                <h1>
+                    <h1>
+                        Gli elementi principali<br>del linguaggio<br><span>HTML</span>
+                    </h1>
+                </h1>
+            </div>
+            <div class="divRight">
+                <h2>
+                    In questa pagina realizzata con il linguaggio <span type="1">HTML</span> e stilata tramite il <span type="1">CSS</span> 
+                    sono riportati alcuni esempi di strutture che si possono realizzare all'interno di 
+                    un documento ipertestuale, tra cui una lista, una tabella, un'immagine o un form per 
+                    l'elaborazione dei dati inseriti da un utente.
+                </h2>
+            </div>
+        </div>
+        <div class="generalDiv" align="center">
+            <h2 style="color: black;">
+                Form
+            </h2>
+            <label><b>Nome</b></label><br>
+            <input type="inputElement" id="name" name="name" required><br><br>
+            <label><b>Cognome</b></label><br>
+            <input type="inputElement" id="surname" name="name" required><br><br>
+            <label><b>Età</b></label><br>
+            <input type="inputElement" id="age" name="name" required><br><br>
+            <label><b>Residenza</b></label><br>
+            <input type="inputElement" id="city" name="name" required><br><br>
+            <label><b>CAP</b></label><br>
+            <input type="inputElement" id="cap" name="name" required><br><br>
+            <br><input type="submit" value="Invia" onclick="stampa()">
+        </div>
+        <div class="generalDiv" align="center" style="background-color: cornflowerblue; height: 430px;">
+            <h2 style="color: white;">
+                Tabella
+            </h2>
+            <table cellpadding="20" cellspacing="20">
+                <tr>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Nome
+                        </h2>
+                    </td>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Cognome
+                        </h2>
+                    </td>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Età
+                        </h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Un nome
+                        </h2>
+                    </td>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Un cognome
+                        </h2>
+                    </td>
+                    <td align="center" valign="center">
+                        <h2 style="color: white;">
+                            Un'età
+                        </h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="generalDiv" align="center" style="height: 600px;">
+            <center>
+                <div style="width: 50%;">
+                    <h2 style="color: black;">
+                        Elenco non ordinato
+                    </h2>
+                    <hr size="4" color="black" width="30%">
+                    <ul>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 1
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 2
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 3
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 4
+                            </h2>
+                        </li>
+                    </ul>
+                    <h2 style="color: black;">
+                        Elenco ordinato
+                    </h2>
+                    <hr size="4" color="black" width="30%">
+                    <ol type="a">
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 1
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 2
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 3
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 style="color: black;">
+                                Opzione 4
+                            </h2>
+                        </li>
+                    </ol>
+                </div>
+            </center>
+        </div>
+        <div class="generalDiv" align="center" style="background-color: black;">
+            <h2>
+                Immagini
+            </h2>
+            <div style="float: left; width:30%;" align="center">
+                <img src="https://www.voglioviverecosi.com/wp-content/uploads/2018/05/SPIAGGE-ISOLE-CANARIE-LE-MIGLIORI-1900x1080.jpg" width="250px" height="200px" style="border-radius:4px;">
+            </div>
+            <div style="float: right; width:30%;" align="center">
+                <img src="https://i0.wp.com/www.travelfar.it/wp-content/uploads/pi%C3%B9-belle-spiagge-della-Corsica-Palombaggia.jpg" width="250px" height="200px" style="border-radius:4px;">
+            </div>
+        </div>
+    </body>
+</html>
