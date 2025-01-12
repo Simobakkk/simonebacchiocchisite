@@ -30,6 +30,7 @@
         nav{
             background-color:black;
             overflow: hidden;
+            height: 80px;
         }
         nav ul{
             list-style-type:none;
@@ -39,17 +40,23 @@
         nav a{
             display: block;
             color: white;
+            border-radius: 10px;
             text-align: center;
             text-decoration: none;
             padding: 10px;
             padding-left: 40px;
             padding-right: 40px;
+            transition: font-size 0.2s ease-in-out;
+        }
+        a:hover{
+            font-size: 25px;
         }
         nav a:hover{
             color: white;
             background-color: cornflowerblue;
         }
         .btn{
+            margin-left: 15px;
             text-decoration: none;
             padding-top: 15px;
             padding-bottom: 15px;
@@ -57,24 +64,50 @@
             padding-left: 50px;
             color: white;
             background-color: rgba(ff, ff, ff, 0.0);
-            border-width: 4px;
-            border-radius: 10%;
+            border: 4px solid white;
+            border-radius: 10px;
             border-color: white;
             border-style: solid;
+            transition: border 0.2s ease-in-out;
+            transition: font-size 0.2s ease-in-out;
         }
-        .btn:hover{
-            border-color: black;
-            border-width: 5px;
-            color: black;
+        .infoIMG{
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .ingr{
-            transition: transform.3s;
+        .mainDivLeft{
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        .mainDivRight{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            height: 300px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .topDiv{
+            width: 98%;
+            height: 400px;
         }
         .ingrImg{
             transition: transform.3s;
         }
         .ingrImg:hover{
-            transform: scale(1.1);
+            transform: scale(1.2);
+        }
+        .btn:hover{
+            border-color: black;
+            border: 5px solid;
+            color: black;
+            font-size: 23px;
+        }
+        .ingr{
+            transition: transform.2s;
         }
         .ingr:hover{
             transform: scale(1.2);
@@ -115,44 +148,48 @@
         </nav>
     </body>
     <section style="background-color: cornflowerblue; width: 100%; height: 420px;">
-        <div style="padding-top: 5px; padding-bottom: 0px; padding-left: 30px; padding-right: 15px; float: left; width: 50%;">
-            <h1>
-                Tecnologie e progettazione di<br>sistemi informatici
-            </h1>
-            <div style="padding-left: 10px; padding-bottom: 50px;">
-                <div style="padding-top: 5px; padding-bottom: 15px; padding-left: 25px; padding-right: 15px; float: left;" class="ingr">
-                    <h3>
-                        <a class="btn" href="SelezioneClasse.html">
-                            Esplora
-                        </a>
-                    </h3>
+        <center>
+            <div class = "topDiv">
+                <div style="padding-top: 5px; padding-bottom: 0px; float: left; width: 50%;" class = "mainDivLeft" >
+                    <h1 align="left">
+                        Tecnologie e progettazione di<br>sistemi informatici
+                    </h1>
+                    <div style="padding-left: 10px; padding-bottom: 50px;">
+                        <div style="padding-top: 5px; padding-bottom: 15px; padding-left: 25px; padding-right: 15px; float: left;" class="ingr">
+                            <h3>
+                                <a class="btn" href="Selezione.html">
+                                    Esplora
+                                </a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top: 30px; padding-bottom: 10px; float: right; width: 40%;" class = "mainDivRight"> 
+                    <div style="background-color: black; padding-top: 10px; padding-bottom: 10px; padding-right: 15px; padding-left: 15px; border-radius: 2%;">
+                        <div style="float: center;">
+                            <h2 align="center">
+                                Esplora
+                            </h2>
+                        </div>
+                        <div style="float: center;">
+                            <h3 align="center">
+                                Esplora facilmente le pagine web realizzate durante il triennio di Informatica
+                                all'ITIS S.Cannizzaro di Rho. All'interno di questo sito Web è possibile visitare
+                                facilmente le pagine realizzate e scoprire le molteplici sfaccettature del linguaggio HTML.
+                                Il linguaggio HTML è infatti il metodo più gettonato per progettare le pagine Web e per gestirne
+                                lo stile.
+                            </h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style="padding-top: 30px; padding-bottom: 10px; padding-left: 55px; padding-right: 0px; float: left; width: 30%;"> 
-            <div style="background-color: black; padding-top: 10px; padding-bottom: 10px; padding-right: 15px; padding-left: 15px; float: left; border-radius: 2%;">
-                <div style="float: center;">
-                    <h2 align="center">
-                        Esplora
-                    </h2>
-                </div>
-                <div style="float: center;">
-                    <h3 align="center">
-                        Esplora facilmente le pagine web realizzate durante il triennio di Informatica
-                        all'ITIS S.Cannizzaro di Rho. All'interno di questo sito Web è possibile visitare
-                        facilmente le pagine realizzate e scoprire le molteplici sfaccettature del linguaggio HTML.
-                        Il linguaggio HTML è infatti il metodo più gettonato per progettare le pagine Web e per gestirne
-                        lo stile.
-                    </h3>
-                </div>
-            </div>
-        </div>
+        </center>
     </section>
     <section style="background-color: white; width: 100%; height: 420px;">
-        <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 120px; padding-right: 20px; float: left; width: 40%;">
+        <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 120px; padding-right: 20px; float: left; width: 30%;" class="infoIMG">
             <div class="ingrImg">
                 <a href="">
-                    <img src="PrimaCartella/Immagini/info" height="300px" width="300px" style="border-radius: 2%;">
+                    <img src="Immagini/info.png" height="300px" width="300px" style="border-radius: 2%;">
                 </a>
             </div>
         </div>
@@ -186,15 +223,17 @@
                 Esplora le pagine web con una tecnica di navigazione semplice ed intuitiva
             </h3>
         </div>
-        <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 150px; padding-right: 0px; float: left; width: 40%;">
-            <div class="ingrImg">
-                <img src="PrimaCartella/Immagini/laptop.png" height="300px" width="350px" style="border-radius: 2%;">
+        <center>
+            <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 150px; padding-right: 0px; float: left; width: 40%;">
+                <div class="ingrImg">
+                    <img src="Immagini/laptop.png" height="300px" width="350px" style="border-radius: 2%;">
+                </div>
             </div>
-        </div>
-        <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 0px; padding-right: 60px; float: right; width: 40%;">
-            <div class="ingrImg">
-                <img src="PrimaCartella/Immagini/webIndex.png" height="300px" width="380px" style="border-radius: 2%;">
+            <div style="padding-top: 40px; padding-bottom: 5px; padding-left: 0px; padding-right: 90px; float: right; width: 40%;">
+                <div class="ingrImg">
+                    <img src="Immagini/webIndex.png" height="300px" width="380px" style="border-radius: 2%;">
+                </div>
             </div>
-        </div>
+        </center>
     </section>
 </html>
