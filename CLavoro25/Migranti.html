@@ -101,36 +101,13 @@
             justify-content: center;
             height: 300px;
         }
-
+        canvas{
+            color: black;
+            margin-top: 50px;
+            border: 1px solid black;
+        }
     </style>
 
-    <script>
-    function readFile(input) {
-      let file = input.files[0];
-    
-      let reader = new FileReader();
-    
-      reader.readAsText(file);
-    
-      reader.onload = function() {
-        let ris = reader.result;
-        const risSplit = ris.split("\n");
-        for(let i=0; i<risSplit.length; i++){
-            let tab = document.getElementById("tabella").getElementsByTagName("tBody")[0];
-            let newRow = tab.insertRow();
-            let cell0 = newRow.insertCell(0);
-            let cell1 = newRow.insertCell(1);
-            const rowSplitted = risSplit[i].split(",");
-            cell0.textContent = rowSplitted[0].slice(1, -1);
-            cell1.textContent = rowSplitted[1].slice(1, -1);
-        }
-      };
-    
-      reader.onerror = function() {
-        console.log(reader.error);
-      };
-    }
-    </script>
     <body>
         <center>
             <header>
@@ -164,6 +141,68 @@
                 <tBody align="center">
                 </tBody>
             </table>
+            <canvas id="canvas" height="600" width = "1200"> //dimensioni grafico: altezza = 550, larghezza = 1050
+            </canvas>
         </center>
     </body>
+
+    <script>
+        function readFile(input) {
+          let file = input.files[0];
+        
+          let reader = new FileReader();
+        
+          reader.readAsText(file);
+        
+          reader.onload = function() {
+            let ris = reader.result;
+            const risSplit = ris.split("\n");
+            const valoriX = [];
+            const valoriY = [];
+            for(let i=0; i<risSplit.length; i++){
+                let tab = document.getElementById("tabella").getElementsByTagName("tBody")[0];
+                let newRow = tab.insertRow();
+                let cell0 = newRow.insertCell(0);
+                let cell1 = newRow.insertCell(1);
+                const rowSplitted = risSplit[i].split(",");
+                cell0.textContent = rowSplitted[0].slice(1, -1);
+                cell1.textContent = rowSplitted[1].slice(1, -1);
+                if(i!=0){
+                    valoriY.push(rowSplitted[0].slice(1, -1));
+                    valoriX.push(rowSplitted[1].slice(1, -1));
+                }
+            }
+            valoriX.sort((a, b) => a - b);
+            valoriY.sort((a, b) => a - b);
+            const traslazioneX = 120;
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            const gradient = ctx.createLinearGradient(0, 0, 450, 400);
+            gradient.addColorStop(0, "green");
+            gradient.addColorStop(1, "aqua");
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.lineWidth = "3";
+            ctx.moveTo(0+traslazioneX, 550); //grafico traslato verso destra di traslazioneX
+            ctx.lineTo(0+traslazioneX, 0);
+            ctx.moveTo(0+traslazioneX, 550);
+            ctx.lineTo(1050+traslazioneX, 550);
+            ctx.stroke();
+            let contY=0;
+            let contX=0;
+            for(let i=0; i<valoriX.length; i++){
+                ctx.font = '20 px calibri';
+                ctx.fillText(valoriY[i], 40, 550-contY);
+                ctx.fillText(valoriX[i], 20+traslazioneX + contX, 550+20);
+                contY+=23;
+                contX+=42;
+            }
+            ctx.stroke();
+          };
+
+          reader.onerror = function() {
+            console.log(reader.error);
+          };
+        }
+        </script>
 </html>
