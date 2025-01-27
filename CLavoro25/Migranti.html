@@ -100,11 +100,43 @@
             align-items: center;
             justify-content: center;
             height: 300px;
+            margin-left: 30px;
         }
         canvas{
             color: black;
-            margin-top: 50px;
-            border: 1px solid black;
+            margin-top: 30px;
+            float: left;
+        }
+        .graphicDiv{
+            margin: 20px;
+            padding: 20px;
+            height: 650px;
+            border: 2px solid black;
+            width: 95%;
+            border-radius: 10px;
+            padding-left: 0px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .rightDiv{
+            background-color: rgb(176, 199, 244);
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            width: 17%;
+            float: left;
+            height: 600px;
+            margin: 10px;
+            margin-left: 18px;
+            margin-right: 0px;
+        }
+        .internDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 440px;
+            width: 90%;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            background-color: rgb(176, 199, 244);
+            border-radius: 10px;
         }
     </style>
 
@@ -136,13 +168,32 @@
                 </div>
             </div>
             <hr size="9" color="white" width="100%">
-
+            <div class="graphicDiv">
+                <div class="leftDiv">
+                    <canvas id="canvas" height="600" width = "1150"> //dimensioni grafico: altezza = 550, larghezza = 1050
+                    </canvas>
+                </div>
+                <div class="rightDiv" align="center">
+                    <h2 style="color: white">
+                        Grafico
+                    </h2>
+                    <div class="internDiv">
+                        <h3 style="color: white;">
+                            Coordinate apice
+                        </h3>
+                        <h3 style="color: white;" id="assex">
+                            Asse x: 
+                        </h3>
+                        <h3 style="color: white;" id="assey">
+                            Asse y:
+                        </h3>
+                    </div>
+                </div>
+            </div>
             <table cellpadding="10" cellspacing="10" id="tabella">
                 <tBody align="center">
                 </tBody>
             </table>
-            <canvas id="canvas" height="600" width = "1200"> //dimensioni grafico: altezza = 550, larghezza = 1050
-            </canvas>
         </center>
     </body>
 
@@ -159,6 +210,7 @@
             const risSplit = ris.split("\n");
             const valoriX = [];
             const valoriY = [];
+            let valoriYsorted = [];
             for(let i=0; i<risSplit.length; i++){
                 let tab = document.getElementById("tabella").getElementsByTagName("tBody")[0];
                 let newRow = tab.insertRow();
@@ -168,21 +220,23 @@
                 cell0.textContent = rowSplitted[0].slice(1, -1);
                 cell1.textContent = rowSplitted[1].slice(1, -1);
                 if(i!=0){
-                    valoriY.push(rowSplitted[0].slice(1, -1));
-                    valoriX.push(rowSplitted[1].slice(1, -1));
+                    valoriX.push(rowSplitted[0].slice(1, -1));
+                    valoriY.push(rowSplitted[1].slice(1, -1));
                 }
             }
+            valoriYsorted = valoriY.slice();
             valoriX.sort((a, b) => a - b);
-            valoriY.sort((a, b) => a - b);
+            valoriYsorted.sort((a, b) => a - b);
+            document.getElementById("assey").innerHTML = "Asse y: <br>"+Math.max(...valoriY);
             const traslazioneX = 120;
             const canvas = document.getElementById("canvas");
             const ctx = canvas.getContext("2d");
             const gradient = ctx.createLinearGradient(0, 0, 450, 400);
             gradient.addColorStop(0, "green");
             gradient.addColorStop(1, "aqua");
-            ctx.fillStyle = gradient;
             ctx.beginPath();
             ctx.lineWidth = "3";
+            ctx.strokeStyle = "black";
             ctx.moveTo(0+traslazioneX, 550); //grafico traslato verso destra di traslazioneX
             ctx.lineTo(0+traslazioneX, 0);
             ctx.moveTo(0+traslazioneX, 550);
@@ -190,11 +244,35 @@
             ctx.stroke();
             let contY=0;
             let contX=0;
+            //scrittura valori
             for(let i=0; i<valoriX.length; i++){
                 ctx.font = '20 px calibri';
-                ctx.fillText(valoriY[i], 40, 550-contY);
+                ctx.fillText(valoriYsorted[i], 40, 550-contY);
                 ctx.fillText(valoriX[i], 20+traslazioneX + contX, 550+20);
                 contY+=23;
+                contX+=42;
+            }
+            ctx.beginPath();
+            ctx.lineWidth = "2";
+            ctx.moveTo(0+traslazioneX, 550);
+            contX=0;
+            ctx.strokeStyle = gradient;
+            //disegno curva
+            let maxHeight = 548;
+            for(let i=0; i<valoriX.length; i++){
+                let height = 0;
+                let valoreRifer = valoriY[i];
+                for(let j=0; j<valoriY.length; j++){
+                    if(valoriYsorted[j] == valoreRifer){
+                        height = j;
+                        console.log(true);
+                    }
+                    if(valoreRifer == Math.max(...valoriY)){
+                        console.log(valoreRifer);
+                        document.getElementById("assex").innerHTML = "Asse x: <br>"+valoriX[i];
+                    }
+                }
+                ctx.lineTo(0+traslazioneX+20+contX, maxHeight - (23*height));
                 contX+=42;
             }
             ctx.stroke();
