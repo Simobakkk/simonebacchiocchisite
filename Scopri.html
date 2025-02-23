@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scopri il sito
+        </title>
+    </head>
+    <style>
+        body{
+            background-color: rgb(188, 239, 241);
+            margin-left: 15px;
+        }
+        h1{
+            color: black;
+            font-family: calibri;
+            font-size: 60px;
+        }
+        h2{
+            color: rgb(84, 83, 83);
+            font-family: calibri;
+            font-size: 20px;
+        }
+        h3{
+            color: white;
+            font-family: calibri;
+        }
+        .mainDiv{
+            width: 80%;
+            height: 500px;
+            margin-top: 50px;
+            float: center;
+            background-color: white;
+            border-radius: 10px;
+            padding-top: 15px;
+            padding-left: 20px;
+            padding-bottom: 15px;
+            padding-right: 0px;
+            border: 6px solid cornflowerblue;
+        }
+        .redDiv{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            width: 8%;
+            border-radius: 10px;
+            height: 30px;
+        }
+        .back{
+            float: left;
+            display: block;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        img{
+            height: 60px;
+            width: 60px;
+            border-radius: 15px;
+            transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+        }
+        img:hover{
+            height: 80px;
+            width: 80px;
+        }
+        .img1{
+            position: absolute;
+            top: 40px;
+            left: 60%;
+            width: 300px;
+            height: 200px;
+            background-image: url(Immagini/img1.jpeg);
+            background-size: 110%;
+            border: 4px solid white;
+            animation-name: rotate1;
+            animation-delay: 1s;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .img2{
+            position: absolute;
+            top: 230px;
+            left: 70%;
+            width: 300px;
+            height: 200px;
+            background-image: url(Immagini/img2.jpg);
+            background-size: 120%;
+            border: 4px solid white;
+            animation-name: rotate2;
+            animation-delay: 2s;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .img3{
+            position: absolute;
+            top: 420px;
+            left: 58%;
+            width: 300px;
+            height: 200px;
+            background-image: url(Immagini/img3.png);
+            background-size: 120%;
+            border: 4px solid white;
+            animation-name: rotate1;
+            animation-delay: 3s;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        .img4{
+            position: absolute;
+            top: 190px;
+            left: 52%;
+            width: 340px;
+            height: 250px;
+            background-image: url(Immagini/img4.jpg);
+            background-size: 100%;
+            border: 4px solid white;
+            animation-name: rotate2;
+            animation-delay: 4s;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate1 {
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(10deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(-10deg);}
+            100%{transform: rotate(-0deg);}
+        }
+        @keyframes rotate2 {
+            0%{transform: rotate(0deg);}
+            25%{transform: rotate(-10deg);}
+            50%{transform: rotate(0deg);}
+            75%{transform: rotate(10deg);}
+            100%{transform: rotate(-0deg);}
+        }
+    </style>
+    <body>
+        <div class="back">
+            <h2 style="font-size: 20px; color: black;">
+                <a href="indexHP.html">
+                    <img src="Immagini/back.jpg">
+                </a>
+            </h2>
+        </div>
+        <center>
+            <div class="mainDiv" align="left">
+                <div class="redDiv">
+                    <h3>
+                        Scopri
+                    </h3>
+                </div>
+                <h1>
+                    Informazioni generali
+                </h1>
+                <div style="width: 47%;">
+                    <h2>
+                        Esplora facilmente le pagine web realizzate durante il triennio di Informatica
+                        all'ITIS S.Cannizzaro di Rho. All'interno di questo sito Web è possibile visitare
+                        facilmente le pagine realizzate e scoprire le molteplici sfaccettature del linguaggio HTML.
+                        Il linguaggio HTML è infatti il metodo più gettonato per progettare le pagine Web e per gestirne
+                        lo stile. Cliccando su "Esplora" nella Homepage del sito, riuscirai a visualizzare le pagine web ordinate
+                        in relazione all'anno di creazione. il design di navigazione è stato reso semplice ed intuitivo per permettere
+                        a qualsiasi utente di navigare senza riscontrare alcun problema.
+                    </h2>
+                </div>
+                <div class="img1">
+                </div>
+                <div class="img2">
+                </div>
+                <div class="img3">
+                </div>
+                <div class="img4">
+                </div>
+            </div>
+        </center>
+    </body>
+</html>
