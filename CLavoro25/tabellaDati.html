@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Elenco account
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        body{
+            background: linear-gradient(to right, blue, black);
+            margin-top: 40px;
+        }
+        h2{
+            color: black;
+            font-family: calibri;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        table{
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.9);
+            padding: 20px 40px;
+        }
+        td{
+            border: 3px solid rgb(218, 215, 215);
+            border-radius: 10px;
+            text-align: center;
+            font-family: calibri;
+        }
+        .back{
+            float: left;
+            display: block;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        img{
+            height: 60px;
+            width: 60px;
+            border-radius: 15px;
+            transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+        }
+        img:hover{
+            height: 70px;
+            width: 70px;
+        }
+    </style>
+    <body>
+        <center>
+            <div class="back">
+                <h2 style="font-size: 20px; color: black;">
+                    <a href="AnagCollection.html">
+                        <img src="../Immagini/back.jpg">
+                    </a>
+                </h2>
+            </div>
+            <table align="center" width="80%" id="table">
+                <thead>
+                    <td>
+                        <h2>
+                            Nome
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>
+                            Cognome
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>
+                            Età
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>
+                            Città
+                        </h2>
+                    </td>
+                    <td>
+                        <h2>
+                            CAP
+                        </h2>
+                    </td>
+                </thead>
+               <tbody>
+               </tbody> 
+            </table>
+        </center>
+    </body>
+    <script>
+        let account = JSON.parse(localStorage.getItem("gruppoAccount"));
+        let table = document.getElementById("table").getElementsByTagName("tbody")[0];
+        for(let i=0; i<account.length; i++){
+            let row = table.insertRow();
+            let c1 = row.insertCell(0);
+            let c2 = row.insertCell(1);
+            let c3 = row.insertCell(2);
+            let c4 = row.insertCell(3);
+            let c5 = row.insertCell(4);
+            c1.textContent = account[i].nome;
+            c2.textContent = account[i].cognome;
+            c3.textContent = account[i].età;
+            c4.textContent = account[i].città;
+            c5.textContent = account[i].cap;
+        }
+    </script>
+</html>

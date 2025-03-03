@@ -36,6 +36,7 @@
             border-radius: 40px;
             width: 75%;
             height: 550px;
+            box-shadow: 2px 10px 8px rgba(0, 0, 0, 0.9);
         }
         span{
             color: black;
@@ -57,21 +58,41 @@
             border-color: cornflowerblue;
         }
         input[type="submit"]{
-            width: 30%;
-            height: 38px;
+            width: 80%;
+            height: 50px;
             border: 3px solid white;
             background: linear-gradient(to right, blue, cornflowerblue);
             border-radius: 10px;
             transition: background-color 0.2s ease-in-out;
-            transition: width 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
             font-family: sans-serif;
             color: white;
             font-size: 20px;
         }
+        button[type="add"]{
+            cursor: pointer;
+            margin-left: 20px;
+            width: 40%;
+            height: 50px;
+            border: 3px solid white;
+            background: linear-gradient(to right, blue, cornflowerblue);
+            border-radius: 20px;
+            transition: background-color 0.2s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+            font-family: sans-serif;
+            color: white;
+            font-size: 40px;
+            text-align: center;
+        }
+        button[type="add"]:hover{
+            background-color: black;
+            color: white;
+            transform: scale(1.2);
+        }
         input[type="submit"]:hover{
             background-color: black;
             color: white;
-            width: 40%;
+            transform: scale(1.2);
         }
         label{
             font-size: 18px;
@@ -92,38 +113,31 @@
         }
     </style>
     <script>
-        let contUtenti = 0;
-        let s = ""
-        function resettaElenco(){
-            document.getElementById("stampa").innerHTML = "";
-            contUtenti = 0;
-            s = "";
+        let gruppoAccount = [];
+        function stampaDati(){
+            let nome = document.getElementById("name").value;
+            let cognome = document.getElementById("surname").value;
+            let età = document.getElementById("age").value;
+            let città = document.getElementById("city").value;
+            let cap = document.getElementById("cap").value;
+            let account = {nome: nome, cognome: cognome, età: età, città: città, cap: cap};
+            gruppoAccount.push(account);
+            localStorage.setItem("gruppoAccount", JSON.stringify(gruppoAccount));
+            window.location.href = "tabellaDati.html";
         }
-        function stampa(){
-            const dati = [];
-            const cDiInput = ["name", "surname", "age", "city", "cap"];
-            const campiITA = ["Nome", "Cognome", "Età", "Residenza", "CAP"];
-            for(let i=0; i<=4; i++){
-                dati.push(document.getElementById(cDiInput[i]).value);
-            }
-            const account = {nome: dati[0], cognome: dati[1], età: dati[2], città: dati[3], cap: dati[4]};
-            const accountStringa = JSON.stringify(account);
-            localStorage.setItem("account", accountStringa);
-            for(let i=0; i<dati.length; i++){
-                if(i==0){
-                    s+="Utente n°"+contUtenti+"<br><br>";
-                }
-                s+=campiITA[i]+": "+utenti[contUtenti][i]+"<br>";
-                if(i==dati.length-1){
-                    s+="<br>";
-                }
-            }
-            contUtenti++;
-            document.getElementById("stampa").innerHTML = s;
-            for(let i=0; i<=4; i++){
-                document.getElementById(cDiInput[i]).value = "";
-            }
-            dati = [];
+        function prelievoAccount(){
+            let nome = document.getElementById("name").value;
+            let cognome = document.getElementById("surname").value;
+            let età = document.getElementById("age").value;
+            let città = document.getElementById("city").value;
+            let cap = document.getElementById("cap").value;
+            let account = {nome: nome, cognome: cognome, età: età, città: città, cap: cap};
+            gruppoAccount.push(account);
+            document.getElementById("name").value = "";
+            document.getElementById("surname").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("cap").value = "";
         }
     </script>
     <body>
@@ -139,16 +153,23 @@
                         Effettua il log in
                     </h1>
                     <label><b>Nome</b></label><br>
-                    <input type="inputElement" id="name" name="name" required><br><br>
+                    <input type="inputElement" id="name" name="name" placeholder="Marco"><br><br>
                     <label><b>Cognome</b></label><br>
-                    <input type="inputElement" id="surname" name="name" required><br><br>
+                    <input type="inputElement" id="surname" name="surname" placeholder="Rossi"><br><br>
                     <label><b>Età</b></label><br>
-                    <input type="inputElement" id="age" name="name" required><br><br>
+                    <input type="inputElement" id="age" name="age" placeholder="17"><br><br>
                     <label><b>Residenza</b></label><br>
-                    <input type="inputElement" id="city" name="name" required><br><br>
+                    <input type="inputElement" id="city" name="city" placeholder="Milano"><br><br>
                     <label><b>CAP</b></label><br>
-                    <input type="inputElement" id="cap" name="name" required><br><br>
-                    <br><input type="submit" value="Invia" onclick="stampa()">
+                    <input type="inputElement" id="cap" name="cap" placeholder="20017"><br><br>
+                    <div style="float: left; width: 30%;">
+                        <input type="submit" value="Invia" onclick="stampaDati()" title="Registra">
+                    </div>
+                    <div style="float: left; width: 30%">
+                        <button type="add" onclick="prelievoAccount()" title="Aggiungi all'elenco">
+                            +
+                        </button>
+                    </div>
                 </div>
             </div>
         </center>
