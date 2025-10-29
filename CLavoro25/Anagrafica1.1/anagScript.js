@@ -22,7 +22,7 @@ document.getElementById("rivela").addEventListener("click", function() {
 
 window.addEventListener("DOMContentLoaded", function() {
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "fileJSON5A", true);
+    xmlhttp.open("GET", "fileJSON5A.json", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
