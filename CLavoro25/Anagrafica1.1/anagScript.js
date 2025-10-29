@@ -68,17 +68,15 @@ document.getElementById("minBtn").addEventListener("click", function() {
     mostraTabella(filtrati);
 });
 
-document.addEventListener("click", function(event) {
-    if(event.key == "Enter"){
-        const lettera = document.getElementById("barraRicerca").value.toUpperCase();
-        const filtrati = [];
-        for (let i = 0; i < studenti.length; i++) {
-            if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
-                filtrati.push(studenti[i]);
+document.getElementById("barraRicerca").addEventListener("Enter", function(event) {
+    const lettera = document.getElementById("barraRicerca").value.toUpperCase();
+    const filtrati = [];
+    for (let i = 0; i < studenti.length; i++) {
+        if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
+            filtrati.push(studenti[i]);
         }
     }
     mostraTabella(filtrati);
-    }
 });
 
 function mostraTabella(lista) {
