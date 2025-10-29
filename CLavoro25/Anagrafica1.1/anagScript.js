@@ -58,19 +58,6 @@ document.getElementById("maggBtn").addEventListener("click", function() {
     mostraTabella(filtrati);
 });
 
-document.addEventListener("click", function(event) {
-    if(event.key == "Enter"){
-        const lettera = document.getElementById("lettera").value.toUpperCase();
-        const filtrati = [];
-        for (let i = 0; i < studenti.length; i++) {
-            if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
-                filtrati.push(studenti[i]);
-        }
-    }
-    mostraTabella(filtrati);
-    }
-});
-
 document.getElementById("minBtn").addEventListener("click", function() {
     const filtrati = [];
     for (let i = 0; i < studenti.length; i++) {
@@ -79,6 +66,19 @@ document.getElementById("minBtn").addEventListener("click", function() {
         }
     }
     mostraTabella(filtrati);
+});
+
+document.addEventListener("click", function(event) {
+    if(event.key == "Enter"){
+        const lettera = document.getElementById("barraRicerca").value.toUpperCase();
+        const filtrati = [];
+        for (let i = 0; i < studenti.length; i++) {
+            if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
+                filtrati.push(studenti[i]);
+        }
+    }
+    mostraTabella(filtrati);
+    }
 });
 
 function mostraTabella(lista) {
