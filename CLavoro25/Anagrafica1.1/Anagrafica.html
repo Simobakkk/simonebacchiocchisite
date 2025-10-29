@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Anagrafica utenti
+        </title>
+    </head>
+    <style>
+        body{
+            background-color:rgb(177, 203, 252);
+            margin-top: 50px;
+            margin-right:30px;
+            margin-left:30px;
+        }
+        input[type = "searchBar"]{
+            width: 85%;
+            border: 0px;
+            height: 45px;
+            border-radius: 10px;
+            transition: width 0.2s, border 0.2s;
+            cursor: auto;
+            border: 2px solid rgb(0, 0, 0);
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 15px;
+            font-family: calibri;
+        }
+        input[type = "searchBar"]:focus{
+            width: 92%;
+        }
+        input[type = "searchBar"]:hover{
+            border: 2px solid cornflowerblue;
+        }
+        input[type = "date"]{
+            width: 30%;
+            border: 0px;
+            height: 45px;
+            border-radius: 10px;
+            cursor: auto;
+            border: 2px solid rgb(0, 0, 0);
+            padding-left: 5px;
+            padding-right: 5px;
+            font-size: 15px;
+            font-family: calibri;
+            font-weight: bold;
+            transition: border 0.2s;
+        }
+        input[type = "date"]:hover{
+            border: 2px solid cornflowerblue;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            background-color: cornflowerblue;
+            transition: transform 0.2s;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-left: 10px;
+            border: 0px solid white;
+        }
+        button:hover{
+            transform: scale(1.1);
+        }
+        div{
+            height: 100px;
+        }
+        table{
+            width: 100%;
+            background-color: white;
+            color: black;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: calibri;
+            border-radius: 10px;
+        }
+    </style>
+    <body>
+        <div width="100%">
+            <div style="float:left; width: 30%;">
+                <input type="searchBar" placeholder="filtra gli utenti per nome...">
+            </div>
+            <div style="float:left; width: 30%;">
+                <button style="float:left;" id="maggBTn">
+                    Maggiorenni
+                </button>
+                <button style="float:left;" id="minBtn">
+                    Minorenni
+                </button>
+            </div>
+            <div style="float:right; width: 30%;">
+                <input type="date" style="margin-right:20px; float:right;">
+                <button style="float:right; width: 100px;" id="rivela">
+                    Rivela
+                </button>
+            </div>
+        </div>
+        <table id="tabella">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Classe</th>
+                    <th>Data nascita</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script src="anagScript.js"></script>
+    </body>
+</html>

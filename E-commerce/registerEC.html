@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Registrazione account
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="">
+    </head>
+    <style>
+        body{
+            background-image: url(https://static.vecteezy.com/system/resources/previews/015/882/420/original/modern-minimalist-dark-blue-premium-abstract-background-with-luxury-geometric-dark-shape-exclusive-wallpaper-design-for-website-poster-brochure-presentation-free-vector.jpg);
+            animation: sfondo 15s ease-in-out infinite;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+        @keyframes sfondo {
+            0% { background-position: 0 0; }
+            50% { background-position: 20% 20%; }
+            100% { background-position: 0 0; }
+        }
+        h1{
+            color: white;
+            font-weight: bold;
+            font-size: 80px;
+            font-family: 'Inter', sans-serif;
+        }
+        h2{
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+        h3{
+            color: black;
+            font-family: 'Inter', sans-serif;
+        }
+        .loginDiv{
+            background-color: white;
+            width: 30%;
+            height: 85vh;
+            padding: 20px 10px;
+            display: flex;
+            align-items: center;
+            float: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        @media screen and (max-width: 1000px){
+            .loginDiv{
+                width: 70%;
+            }
+        }
+        .typingText{
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid white;
+            border-color: transparent;
+            width: 0;
+            animation: generateText 3s forwards, blink 0.5s step-end 10; 
+            animation-delay: 0.5s;
+        }
+        @keyframes generateText {
+            from{width: 0%;}
+            to{width: 100%;}
+        }
+        @keyframes blink {
+            50% { border-color: white; }
+        }
+        input[type="submit"]{
+            width: 73%;
+            height: 35px;
+            background-color: cornflowerblue;
+            border-radius: 10px;
+            transition: width 0.2s ease-in-out;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            color: white;
+            font-size: 15px;
+            padding: 2px 5px;
+            border-style: none;
+        }
+        input[type="inputElement"]{
+            border-radius: 10px;
+            border: 2px solid lightgray;
+            height: 32px;
+            width: 70%;
+            padding: 2px 5px;
+            transition: width 0.2s ease-in-out;
+        }
+        .inputGoogleApple{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(226, 226, 226);
+            color: #555;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            gap: 10px;
+        }
+        .inputGoogleApple:hover{
+            background-color: rgb(146, 211, 239);
+        }
+        .inputGoogleApple img {
+            width: 20px;
+            height: 20px;
+        }
+        input[type="inputElement"]:focus{
+            width: 80%;
+        }
+        input[type="submit"]:hover{
+            width: 80%;
+        }
+        input::placeholder{
+            color: lightgray;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <body>
+        <div class = "loginDiv">
+            <div align="center" style="width: 80%; height: 80vh;">
+                <div style="margin-bottom: 30px;">
+                    <h2>
+                        Crea un account
+                    </h2>
+                </div>
+                <div style="margin: 10px 5px;" align="center">
+                    <input type="inputElement" id="name" name="name" placeholder="Il tuo nome" required><br><br>
+                    <input type="inputElement" id="name" name="name" placeholder="La tua città" required><br><br>
+                    <input type="inputElement" id="name" name="name" placeholder="CAP" required><br><br>
+                    <input type="inputElement" id="name" name="name" placeholder="Numero di telefono" required><br><br>
+                    <input type="inputElement" id="name" name="name" placeholder="Indirizzo di spedizione" required><br><br>
+                    <input type="inputElement" id="password" name="password" placeholder="La tua password" required><br><br>
+                    <input type="submit" id="password" value="Registrati" onclick="verificaDati()"><br>
+                    <h3>
+                        o
+                    </h3>
+                    <button class="inputGoogleApple">
+                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+                        <span>Login con Google</span>
+                    </button><br>
+                    <button class="inputGoogleApple">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Google logo">
+                        <span>Login con Apple</span>
+                    </button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function verificaDati(){
+
+        }
+    </script>
+</html>
