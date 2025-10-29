@@ -22,7 +22,7 @@ document.getElementById("rivela").addEventListener("click", function() {
 
 window.addEventListener("DOMContentLoaded", function() {
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "Classe5B.json", true);
+    xmlhttp.open("GET", "fileJSON5A", true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -32,32 +32,10 @@ window.addEventListener("DOMContentLoaded", function() {
     };
 });
 
-function mostraTabella(lista) {
-    const tbody = document.querySelector("#tabella tbody");
-    tbody.innerHTML = "";
-    for (let i = 0; i < lista.length; i++) {
-        const s = lista[i];
-        const tr = document.createElement("tr");
-        tr.innerHTML = `<td>${s.nome}</td><td>${s.cognome}</td><td>${s.classe}</td><td>${s.nascita}</td>`;
-        tbody.appendChild(tr);
-    }
-}
-
 function convertData(data) {
     const parti = data.split("-");
     return new Date(parti[2], parti[1] - 1, parti[0]);
 }
-
-document.getElementById("filtraBtn").addEventListener("click", function() {
-    const lettera = document.getElementById("lettera").value.toUpperCase();
-    const filtrati = [];
-    for (let i = 0; i < studenti.length; i++) {
-        if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
-            filtrati.push(studenti[i]);
-        }
-    }
-    mostraTabella(filtrati);
-});
 
 function calcolaEta(nascitaStr) {
     const nascita = convertData(nascitaStr);
@@ -80,6 +58,19 @@ document.getElementById("maggBtn").addEventListener("click", function() {
     mostraTabella(filtrati);
 });
 
+document.addEventListener("click", function(event) {
+    if(event.key == "Enter"){
+        const lettera = document.getElementById("lettera").value.toUpperCase();
+        const filtrati = [];
+        for (let i = 0; i < studenti.length; i++) {
+            if (studenti[i].cognome.toUpperCase().startsWith(lettera)) {
+                filtrati.push(studenti[i]);
+        }
+    }
+    mostraTabella(filtrati);
+    }
+});
+
 document.getElementById("minBtn").addEventListener("click", function() {
     const filtrati = [];
     for (let i = 0; i < studenti.length; i++) {
@@ -89,3 +80,14 @@ document.getElementById("minBtn").addEventListener("click", function() {
     }
     mostraTabella(filtrati);
 });
+
+function mostraTabella(lista) {
+    const tbody = document.querySelector("#tabella tbody");
+    tbody.innerHTML = "";
+    for (let i = 0; i < lista.length; i++) {
+        const s = lista[i];
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${s.nome}</td><td>${s.cognome}</td><td>${s.classe}</td><td>${s.nascita}</td>`;
+        tbody.appendChild(tr);
+    }
+}
