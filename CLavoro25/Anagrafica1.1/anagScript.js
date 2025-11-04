@@ -2,9 +2,9 @@ let studenti = [];
 
 document.getElementById("rivela").addEventListener("click", function() {
     const dataInput = document.getElementById("dataInput").value;
-    const output = document.getElementById("generazioneOutput");
+    const output = document.getElementById("generazione");
     if (!dataInput) {
-        output.textContent = "La data inserita non è valida.";
+        output.textContent = "Data non valida.";
         return;
     }
     const anno = new Date(dataInput).getFullYear();
