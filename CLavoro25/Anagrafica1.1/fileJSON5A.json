@@ -46,5 +46,53 @@
     "cognome": "Costa",
     "classe": "5A",
     "nascita": "03/04/2008"
+  },
+  {
+    "nome": "Mattia",
+    "cognome": "Rossi",
+    "classe": "5A",
+    "nascita": "15/03/2006"
+  },
+  {
+    "nome": "Alessandra",
+    "cognome": "Bianchi",
+    "classe": "5A",
+    "nascita": "22/11/2007"
+  },
+  {
+    "nome": "Matteo",
+    "cognome": "Verdi",
+    "classe": "5A",
+    "nascita": "05/07/2005"
+  },
+  {
+    "nome": "Gabriele",
+    "cognome": "Sarto",
+    "classe": "5A",
+    "nascita": "30/01/2008"
+  },
+  {
+    "nome": "Sabrina",
+    "cognome": "Ferrari",
+    "classe": "5A",
+    "nascita": "18/09/2004"
+  },
+  {
+    "nome": "Benedetta",
+    "cognome": "Romano",
+    "classe": "5A",
+    "nascita": "09/06/2007"
+  },
+  {
+    "nome": "Antonio",
+    "cognome": "Galli",
+    "classe": "5A",
+    "nascita": "27/12/2005"
+  },
+  {
+    "nome": "Samuele",
+    "cognome": "Costa",
+    "classe": "5A",
+    "nascita": "03/04/2008"
   }
 ]
