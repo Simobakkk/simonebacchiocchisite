@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 function convertData(data) {
-    const parti = data.split("-");
+    const parti = data.split("/");
     return new Date(parti[2], parti[1] - 1, parti[0]);
 }
 
