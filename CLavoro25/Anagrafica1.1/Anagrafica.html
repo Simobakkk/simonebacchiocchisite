@@ -6,11 +6,17 @@
         </title>
     </head>
     <style>
+        header{
+            background-color: white;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
         body{
             background-color:rgb(177, 203, 252);
-            margin-top: 50px;
-            margin-right:30px;
-            margin-left:30px;
+            margin: 0px 0px;
         }
         input[type = "search"]{
             width: 85%;
@@ -55,7 +61,7 @@
             font-size: 15px;
             color: rgb(255, 255, 255);
             background-color: cornflowerblue;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.2s ease-in-out;
             font-weight: bold;
             margin-right: 10px;
             margin-left: 10px;
@@ -63,9 +69,15 @@
         }
         button:hover{
             transform: scale(1.1);
+            background-color: black;
         }
         div{
             height: 100px;
+        }
+        div[id = "container"]{
+            margin-top: 50px;
+            margin-right:30px;
+            margin-left:30px;
         }
         table{
             width: 100%;
@@ -101,9 +113,23 @@
             color: white;
             font-weight: bold;
         }
+        h1{
+            font-size: 50px;
+            font-family: calibri;
+            color: black;
+        }
+        span{
+            color:cornflowerblue;
+        }
     </style>
     <body>
-        <div width="100%">
+        <header>
+            <h1>
+                Anagrafica <span><i>utenti</i></span>
+            </h1>
+        </header>
+        <div id="container">
+            <div width="100%">
             <div style="float:left; width: 30%;">
                 <input type="search" placeholder="filtra gli utenti per nome..." id="barraRicerca">
             </div>
@@ -135,6 +161,7 @@
             </thead>
             <tbody></tbody>
         </table>
+        </div>
         <script src="anagScript.js"></script>
     </body>
 </html>
