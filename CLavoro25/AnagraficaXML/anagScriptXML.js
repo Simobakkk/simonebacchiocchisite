@@ -40,7 +40,7 @@ fetch("fileXML5A").then(function(response) {
             nascita: nascita
         });
     }
-
+    mostraTabella(studenti);
   })
   .catch(function(error) {
     console.error("Il file XML non è stato importanto correttamente: ",error);
