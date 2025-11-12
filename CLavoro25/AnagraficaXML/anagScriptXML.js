@@ -28,7 +28,7 @@ fetch("fileXML5A").then(function(response) {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(xmlString, "application/xml");
     let persona = xmlDoc.getElementsByTagName("persona");
-    for (var i = 0; i < persona; i++) {
+    for (var i = 0; i < persona.length; i++) {
         var p = xmlDoc[i];
         var nome = p.getElementsByTagName('nome')[0].textContent;
         var cognome = p.getElementsByTagName('cognome')[0].textContent;
