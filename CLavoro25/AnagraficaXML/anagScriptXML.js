@@ -27,12 +27,13 @@ fetch("fileXML5A").then(function(response) {
   .then(function(xmlString) {
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(xmlString, "application/xml");
-    for (var i = 0; i < xmlDoc.length; i++) {
-        var persona = xmlDoc[i];
-        var nome = persona.getElementsByTagName('nome')[0].textContent;
-        var cognome = persona.getElementsByTagName('cognome')[0].textContent;
-        var classe = persona.getElementsByTagName('classe')[0].textContent;
-        var nascita = persona.getElementsByTagName('nascita')[0].textContent;
+    let persona = xmlDoc.getElementsByTagName("persona");
+    for (var i = 0; i < persona; i++) {
+        var p = xmlDoc[i];
+        var nome = p.getElementsByTagName('nome')[0].textContent;
+        var cognome = p.getElementsByTagName('cognome')[0].textContent;
+        var classe = p.getElementsByTagName('classe')[0].textContent;
+        var nascita = p.getElementsByTagName('nascita')[0].textContent;
         studenti.push({
             nome: nome,
             cognome: cognome,
