@@ -20,17 +20,31 @@ document.getElementById("rivela").addEventListener("click", function() {
     output.innerHTML = `<b>${generazione}</b>`;
 });
 
-window.addEventListener("DOMContentLoaded", function() {
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "fileJSON5A.json", true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            studenti = JSON.parse(this.responseText);
-            mostraTabella(studenti);
-        }
-    };
-});
+//importazione del file XML
+fetch("fileXML5A").then(function(response) {
+    return response.text(); //converto il file XMl in una stringa
+  })
+  .then(function(xmlString) {
+    let parser = new DOMParser();
+    let xmlDoc = parser.parseFromString(xmlString, "application/xml");
+    for (var i = 0; i < persona.length; i++) {
+        var persona = xmlDoc[i];
+        var nome = persona.getElementsByTagName('nome')[0].textContent;
+        var cognome = persona.getElementsByTagName('cognome')[0].textContent;
+        var classe = persona.getElementsByTagName('classe')[0].textContent;
+        var nascita = persona.getElementsByTagName('nascita')[0].textContent;
+        studenti.push({
+            nome: nome,
+            cognome: cognome,
+            classe: classe,
+            nascita: nascita
+        });
+    }
+
+  })
+  .catch(function(error) {
+    console.error("Il file XML non è stato importanto correttamente: ",error);
+  });
 
 function convertData(data) {
     const parti = data.split("/");
