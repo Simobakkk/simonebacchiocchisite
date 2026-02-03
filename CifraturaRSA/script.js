@@ -6,11 +6,11 @@ async function criptRSA(){
     const chiave_pubblica = await ris.json(); // risposta convertita in JSON
     const e = chiave_pubblica.e;
     const n = chiave_pubblica.n;
-    let cStringa; //messaggio cifrato
+    let c; //messaggio cifrato
     for(let i=0; i<textASCII.length; i++){
-        cStringa.push(Math.pow(textASCII[i], e) % n + " "); 
+        c.push(Math.pow(textASCII[i], e) % n + " "); 
     }
-    localStorage.setItem("messaggio_cifrato", cStringa);
+    localStorage.setItem("messaggio_cifrato", JSON.stringify(c));
     window.location.href = "decifraturaRSA.html";
 }
 
