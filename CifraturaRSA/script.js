@@ -8,7 +8,7 @@ async function criptRSA(){
     const n = chiave_pubblica.n;
     let cStringa; //messaggio cifrato
     for(let i=0; i<textASCII.length; i++){
-        cStringa.push(Math.pow(textASCII[i], (e%n))+" "); 
+        cStringa.push(Math.pow(textASCII[i], e) % n + " "); 
     }
     localStorage.setItem("messaggio_cifrato", cStringa);
     window.location.href = "decifraturaRSA.html";

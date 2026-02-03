@@ -3,15 +3,16 @@ async function decriptRSA(){
     const chiave_privata = await ris.json();
     const d = chiave_privata.d;
     const n = chiave_privata.n;
-    const c_s = localStorage.getItem("messaggio_cifrato");
-    let m_s; //messaggio originale stringa
+    const cStringa = localStorage.getItem("messaggio_cifrato");
+    let m; //messaggio originale 
     for(let i=0; i<mCifrato_S.length; i++){
-        m.push(Math.pow(parseInt(c_s[i]), (d%n)));
+        m.push(Math.pow(parseInt(cStringa[i]), d) % n);
     }
-    let m = deconversionASCII(m_s);
+    m = deconversionASCII(m_s);
     m = document.getElementById("text").innerHTML;
 }
-function conversionASCII(text){
+
+function deconversionASCII(text){
     const vet = [];
     for(let i=0; i<text.length; i++){
         vet.push(text.fromCharCode(i));
