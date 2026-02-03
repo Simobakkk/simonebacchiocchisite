@@ -1,0 +1,494 @@
+        body{
+            background-color: rgb(54, 54, 54);
+        }
+        h1{
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-size: 90px;
+            margin: 0px, 0px;
+        }
+        h2{
+            font-family: "Inter", sans-serif;
+            color: white;
+            font-size: 20px;
+        }
+        .mainContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            padding: 0px 0px;
+        }
+        .mainContainer{
+            background-image: url(droneSfondo.png);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sectionHP{
+            background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0));
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            gap: 20px;
+            height: auto;
+            width: 100%;
+            padding: 110px 120px;
+        }
+        @media (max-width: 900px){
+            .sectionHP{
+                align-items: center;
+                justify-content: center;
+                padding: 80px 20px
+            }
+        }
+        .sectionP{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            background-color: white;
+            height: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .sectionPrincipal{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            height: auto;
+            width: 100%;
+            gap: 90px;
+        }
+        @media (max-width: 900px){
+            .sectionPrincipal{
+                flex-direction: column;
+            }
+        }
+        .mainDiv{
+            padding: 40px, 40px;
+            float: left;
+            height: auto;
+            width: 50%;
+        }
+        @media (max-width: 900px){
+            .mainDiv{
+                width: 90%;
+            }
+        }
+        .imgDiv{
+            padding-right: 30px;
+            float: right;
+            height: auto;
+            width: 40%;      
+        }
+        .mainDivElement{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .startButton{
+            font-family: "Inter", sans-serif;
+            border-radius: 10px;
+            width: 170px;
+            height: 60px;
+            cursor: pointer;
+            background-color: rgb(100, 175, 237);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            color: white;
+            border: 0px;
+            font-size: 20px;
+        }
+        .startButton:hover{
+            background-color: black;
+            transform: scale(1.1);
+        }
+.slide-in {
+  opacity: 0;
+  transform: translateX(200px);
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.text-appear {
+  opacity: 0;
+  animation: fadeText 0.6s ease-out forwards;
+  animation-delay: 0.5s; 
+}
+
+@keyframes fadeText {
+  to {
+    opacity: 1;
+  }
+}
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 90px;
+    background-color: white;
+    overflow: visible;
+    padding: 0 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav ul{
+    display: flex;          
+    gap: 50px; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    gap: 50px;
+}
+nav a{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: calibri;
+    font-size: 18px;
+    padding: 10px, 15px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    text-align: center;
+    padding: 5px 10px;
+}
+nav a:hover{
+    transform: scale(1.1);
+    background-color: rgb(133, 171, 241);
+    color: white;
+    font-weight: bold;
+}
+
+nav li{
+    position: relative;
+}
+
+/*per mobile adattamento*/
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+}
+
+@media (max-width: 950px) {
+  nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+}
+
+
+.nav ul.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #111;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.hidden-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0px;
+    border: 0px;
+    gap: 10px;
+}
+@media (max-width: 800px) {
+  .container{
+    flex-direction: column;
+  }
+}
+
+.ml_description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    background-color: rgb(133, 171, 241);
+    border-radius: 10px;
+    height: 450px;
+    width: 40%;
+    flex-direction: column;
+    padding: 24px 32px;  
+    box-shadow: 10px 8px 10px rgba(0,0,0,0.15);
+}
+@media (max-width: 800px) {
+    .ml_description{
+        width: 60%;
+    }
+}
+.ml_description h1{
+    font-family: Inter;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.ml_description h2{
+    font-family: Inter;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+.ml_description h3{
+    font-family: Inter;
+    font-size: 15px;
+    color: white;
+    margin: 20px 40px;
+    text-align: center;
+}
+.ml_description button{
+    background-color: rgb(73, 149, 211);
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: bold;
+    padding: 10px 20px;
+    height: 80px;
+    width: 200px;
+    border: none;
+    margin: 20px;
+}
+.ml_description button:hover{
+    transform: scale(1.1);
+}
+.ml_number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    height: 450px;
+    width: 40%;
+    flex-direction: column;
+    padding: 24px 32px;  
+    box-shadow: 10px 8px 10px rgba(0,0,0,0.15);
+}
+@media (max-width: 800px) {
+    .ml_number{
+        width: 60%;
+    }
+}
+.ml_number h1{
+    font-family: calibri;
+    font-size: 160px;
+    font-weight: bold;
+    color: #bebdbd;
+    margin: 0px;
+}
+.ml_number h2{
+    font-family: calibri;
+    font-size: 50px;
+    font-weight: bold;
+    color: #bebdbd;
+    margin: 0px;
+}
+/*conclusione pagina*/
+.footer {
+    background: rgb(133, 171, 241);
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+.footer .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer .col h3 {
+    font-family: Inter;
+    color: white;
+    margin-bottom: 10px;
+}
+.footer a {
+    font-family: Inter;
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 4px 0;
+}
+@media (max-width: 900px){
+    .footer .col h3{
+        text-align: center;
+    }
+    .footer a{
+        text-align: center;
+    }
+}
+.footer a:hover {
+    color: green;
+}
+.copy {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+}
+/*sezione informativa MANOLIVA*/
+.section{
+    background-color: #e6e4e4;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding: 35px 45px;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.section h1{
+    font-family: Inter;
+    color: black;
+    font-size: 45px;
+    font-weight: bold;
+}
+.section h2{
+    font-family: Inter;
+    color: rgb(96, 95, 95);
+    font-size: 17px;
+    font-weight: bold;
+}
+.containerSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px;
+    background: none;
+}
+@media (max-width: 900px) {
+    .containerSection{
+        flex-direction: column;
+    }
+}
+.S-element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    height: 300px;
+}
+@media (max-width: 900px) {
+    .S-element{
+        width: 70%;
+    }
+}
+.S-element h1{
+    color: black;
+    font-family: Inter;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+.S-element h3{
+    color: rgb(120, 120, 120);
+    font-family: Inter;
+    font-size: 18px;
+    text-align: center;
+}
+
+/*sezione caricamento file (sezione principale)*/
+
+.column{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 60px;
+}
+.column div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    min-width: 200px;
+    height: 250px;
+    background-color:#f9f9f9;
+    border-radius: 10px;
+    padding: 35px 40px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+.column div:hover{
+    transform: translateY(-15px);
+    border: 1px solid black;
+}
+.column div h1{
+    font-family: Inter;
+    font-size: 40px;
+    color: black;
+}
+.column div h2{
+    font-family: Inter;
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+}

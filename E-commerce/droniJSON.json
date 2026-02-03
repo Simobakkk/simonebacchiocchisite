@@ -1,0 +1,114 @@
+{
+  "droni": [
+    {
+      "nome": "DJI Mini 4 Pro",
+      "marca": "DJI",
+      "modello": "Mini 4 Pro",
+      "prezzo": 899,
+      "velocita_kmh": 57,
+      "batteria_mAh": 2590,
+      "minuti_volo": 34,
+      "immagine": "",
+      "descrizione": "Drone compatto con ottima qualità video e funzioni avanzate."
+    },
+    {
+      "nome": "DJI Air 3",
+      "marca": "DJI",
+      "modello": "Air 3",
+      "prezzo": 1099,
+      "velocita_kmh": 68,
+      "batteria_mAh": 4241,
+      "minuti_volo": 46,
+      "immagine": "",
+      "descrizione": "Modello versatile con doppia fotocamera e lunga autonomia."
+    },
+    {
+      "nome": "DJI Mavic 3 Classic",
+      "marca": "DJI",
+      "modello": "Mavic 3 Classic",
+      "prezzo": 1599,
+      "velocita_kmh": 68,
+      "batteria_mAh": 5000,
+      "minuti_volo": 46,
+      "immagine": "",
+      "descrizione": "Drone premium con sensore professionale e stabilità eccellente."
+    },
+    {
+      "nome": "Autel EVO Lite+",
+      "marca": "Autel Robotics",
+      "modello": "EVO Lite+",
+      "prezzo": 1249,
+      "velocita_kmh": 68,
+      "batteria_mAh": 6175,
+      "minuti_volo": 40,
+      "immagine": "",
+      "descrizione": "Ottime prestazioni in condizioni di scarsa luce e volo stabile."
+    },
+    {
+      "nome": "Autel EVO Nano+",
+      "marca": "Autel Robotics",
+      "modello": "EVO Nano+",
+      "prezzo": 799,
+      "velocita_kmh": 54,
+      "batteria_mAh": 2250,
+      "minuti_volo": 28,
+      "immagine": "",
+      "descrizione": "Ultraleggero con fotocamera avanzata e funzioni intelligenti."
+    },
+    {
+      "nome": "Parrot Anafi",
+      "marca": "Parrot",
+      "modello": "Anafi",
+      "prezzo": 699,
+      "velocita_kmh": 55,
+      "batteria_mAh": 2700,
+      "minuti_volo": 25,
+      "immagine": "",
+      "descrizione": "Drone pieghevole con zoom ottico e buona autonomia."
+    },
+    {
+      "nome": "Parrot Anafi USA",
+      "marca": "Parrot",
+      "modello": "Anafi USA",
+      "prezzo": 6999,
+      "velocita_kmh": 55,
+      "batteria_mAh": 3400,
+      "minuti_volo": 32,
+      "immagine": "",
+      "descrizione": "Modello professionale con sensori termici e grande robustezza."
+    },
+    {
+      "nome": "Holy Stone HS720E",
+      "marca": "Holy Stone",
+      "modello": "HS720E",
+      "prezzo": 299,
+      "velocita_kmh": 44,
+      "batteria_mAh": 2800,
+      "minuti_volo": 23,
+      "immagine": "",
+      "descrizione": "Drone economico ma stabile, ideale per principianti."
+    },
+    {
+      "nome": "Holy Stone HS440",
+      "marca": "Holy Stone",
+      "modello": "HS440",
+      "prezzo": 129,
+      "velocita_kmh": 32,
+      "batteria_mAh": 1500,
+      "minuti_volo": 20,
+      "immagine": "",
+      "descrizione": "Compatto e leggero, perfetto per chi inizia a volare."
+    },
+    {
+      "nome": "Ryze Tello",
+      "marca": "Ryze",
+      "modello": "Tello",
+      "prezzo": 109,
+      "velocita_kmh": 28,
+      "batteria_mAh": 1100,
+      "minuti_volo": 13,
+      "immagine": "",
+      "descrizione": "Piccolo drone educativo con funzioni base e buona stabilità."
+    }
+  ]
+}

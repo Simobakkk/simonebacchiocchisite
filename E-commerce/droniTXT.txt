@@ -1,0 +1,99 @@
+Nome: DJI Agras T40
+Marca: DJI
+Modello: Agras T40
+Prezzo: 17999
+Velocità (km/h): 36
+Batteria (mAh): 30000
+Minuti di volo: 18
+Immagine: 
+Descrizione: Drone agricolo ad alta capacità per trattamenti professionali.
+
+Nome: DJI Matrice 350 RTK
+Marca: DJI
+Modello: Matrice 350 RTK
+Prezzo: 11999
+Velocità (km/h): 82
+Batteria (mAh): 5880
+Minuti di volo: 55
+Immagine: 
+Descrizione: Drone industriale con sensori avanzati e grande autonomia.
+
+Nome: Autel Alpha
+Marca: Autel Robotics
+Modello: Alpha
+Prezzo: 15999
+Velocità (km/h): 90
+Batteria (mAh): 8000
+Minuti di volo: 40
+Immagine: 
+Descrizione: Drone professionale con capacità di volo in condizioni estreme.
+
+Nome: Autel EVO Max 4T
+Marca: Autel Robotics
+Modello: EVO Max 4T
+Prezzo: 8999
+Velocità (km/h): 72
+Batteria (mAh): 8070
+Minuti di volo: 42
+Immagine: 
+Descrizione: Drone avanzato con telecamere multiple e funzioni intelligenti.
+
+Nome: Parrot Anafi Ai
+Marca: Parrot
+Modello: Anafi Ai
+Prezzo: 4999
+Velocità (km/h): 55
+Batteria (mAh): 6800
+Minuti di volo: 32
+Immagine: 
+Descrizione: Drone con connessione 4G e fotogrammetria avanzata.
+
+Nome: Parrot Mambo FPV
+Marca: Parrot
+Modello: Mambo FPV
+Prezzo: 179
+Velocità (km/h): 30
+Batteria (mAh): 550
+Minuti di volo: 8
+Immagine: 
+Descrizione: Piccolo drone FPV ideale per principianti.
+
+Nome: Holy Stone HS720R
+Marca: Holy Stone
+Modello: HS720R
+Prezzo: 329
+Velocità (km/h): 44
+Batteria (mAh): 2800
+Minuti di volo: 26
+Immagine: 
+Descrizione: Drone pieghevole con buona stabilità e funzioni GPS.
+
+Nome: Holy Stone HS600
+Marca: Holy Stone
+Modello: HS600
+Prezzo: 399
+Velocità (km/h): 48
+Batteria (mAh): 3000
+Minuti di volo: 28
+Immagine: 
+Descrizione: Drone versatile con fotocamera 4K e lunga autonomia.
+
+Nome: Potensic T25
+Marca: Potensic
+Modello: T25
+Prezzo: 159
+Velocità (km/h): 28
+Batteria (mAh): 1000
+Minuti di volo: 10
+Immagine: 
+Descrizione: Drone economico con GPS e funzioni automatiche base.
+
+Nome: Potensic P5G
+Marca: Potensic
+Modello: P5G
+Prezzo: 199
+Velocità (km/h): 32
+Batteria (mAh): 1500
+Minuti di volo: 18
+Immagine: 
+Descrizione: Drone leggero con trasmissione video stabile e controlli intuitivi.

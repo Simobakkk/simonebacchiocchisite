@@ -1,0 +1,121 @@
+<droni>
+  <drone>
+    <nome>DJI FPV</nome>
+    <marca>DJI</marca>
+    <modello>FPV</modello>
+    <prezzo>1299</prezzo>
+    <velocita_kmh>140</velocita_kmh>
+    <batteria_mAh>2000</batteria_mAh>
+    <minuti_volo>20</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone da gara con visuale in prima persona e grande velocità.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>DJI Avata 2</nome>
+    <marca>DJI</marca>
+    <modello>Avata 2</modello>
+    <prezzo>999</prezzo>
+    <velocita_kmh>97</velocita_kmh>
+    <batteria_mAh>3400</batteria_mAh>
+    <minuti_volo>23</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Compatto e agile, ideale per riprese immersive in FPV.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Autel Dragonfish Lite</nome>
+    <marca>Autel Robotics</marca>
+    <modello>Dragonfish Lite</modello>
+    <prezzo>8999</prezzo>
+    <velocita_kmh>108</velocita_kmh>
+    <batteria_mAh>10000</batteria_mAh>
+    <minuti_volo>81</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone VTOL professionale con autonomia eccezionale.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Autel X-Star Premium</nome>
+    <marca>Autel Robotics</marca>
+    <modello>X-Star Premium</modello>
+    <prezzo>899</prezzo>
+    <velocita_kmh>56</velocita_kmh>
+    <batteria_mAh>4900</batteria_mAh>
+    <minuti_volo>25</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone affidabile con buona qualità video e GPS avanzato.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Parrot Bluegrass Fields</nome>
+    <marca>Parrot</marca>
+    <modello>Bluegrass Fields</modello>
+    <prezzo>4999</prezzo>
+    <velocita_kmh>46</velocita_kmh>
+    <batteria_mAh>6000</batteria_mAh>
+    <minuti_volo>25</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone agricolo progettato per analisi multispettrali.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Parrot Swing</nome>
+    <marca>Parrot</marca>
+    <modello>Swing</modello>
+    <prezzo>139</prezzo>
+    <velocita_kmh>30</velocita_kmh>
+    <batteria_mAh>550</batteria_mAh>
+    <minuti_volo>8</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone ibrido con modalità quadricottero e ala fissa.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Holy Stone HS175D</nome>
+    <marca>Holy Stone</marca>
+    <modello>HS175D</modello>
+    <prezzo>259</prezzo>
+    <velocita_kmh>35</velocita_kmh>
+    <batteria_mAh>1700</batteria_mAh>
+    <minuti_volo>23</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone pieghevole con GPS e buona stabilità in volo.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Holy Stone HS110G</nome>
+    <marca>Holy Stone</marca>
+    <modello>HS110G</modello>
+    <prezzo>159</prezzo>
+    <velocita_kmh>32</velocita_kmh>
+    <batteria_mAh>1500</batteria_mAh>
+    <minuti_volo>13</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone economico con GPS e funzioni automatiche base.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Potensic ATOM SE</nome>
+    <marca>Potensic</marca>
+    <modello>ATOM SE</modello>
+    <prezzo>299</prezzo>
+    <velocita_kmh>52</velocita_kmh>
+    <batteria_mAh>2500</batteria_mAh>
+    <minuti_volo>31</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone leggero con buona autonomia e riprese fluide.</descrizione>
+  </drone>
+
+  <drone>
+    <nome>Potensic D88</nome>
+    <marca>Potensic</marca>
+    <modello>D88</modello>
+    <prezzo>349</prezzo>
+    <velocita_kmh>50</velocita_kmh>
+    <batteria_mAh>3400</batteria_mAh>
+    <minuti_volo>20</minuti_volo>
+    <immagine></immagine>
+    <descrizione>Drone robusto con fotocamera 2K e modalità intelligenti.</descrizione>
+  </drone>
+</droni>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DroneSell - Acquista il tuo drone
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="e-drone_logo.png">
+        <link rel="stylesheet" href="style.css">type="image/png" href="e-drone_logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    </head>
+    <body align="center">
+        <nav>
+            <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
+            <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;" id="greeting"></h2></div>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="catalogo.html">Prodotti</a></li>
+                <li><a href="carrello.html">Carrello</a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mainContainer"> 
+            <section class="sectionHP">
+                <div class="mainDiv">
+                    <div class="mainDivElement hidden-element">
+                        <h1 align="left">
+                            Scegli tra migliaia di<br>Droni
+                        </h1>
+                    </div>
+                    <div class="mainDivElement" align="left">
+                        <h2>
+                        Acquista il tuo drone attraverso la nostra raccolta di marche<br>specializzate
+                        </h2>
+                    </div>
+                    <div class="mainDivElement" align="left">
+                        <button class="startButton" onclick="document.getElementById('sezionePrincipale').scrollIntoView({behavior: 'smooth'});">
+                            <b>Inizia</b>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <div class="ml_description hidden-element">
+                <h1>
+                    SCOPRI
+                </h1>
+                <h2>
+                    Unione di efficienza e dedizione
+                </h2>
+                <h3>
+                    Da sempre dimostriamo ai nostri clienti professionalità nella consegna e nella cura dei nostri prodotti.
+                    Acquista il tuo drone in tempi record.
+                </h3>
+                <button onclick="document.getElementById('sezionePrincipale').scrollIntoView({behavior: 'smooth'});">
+                   Scopri di più
+                </button>
+            </div>
+
+            <div class="ml_number hidden-element">
+                <h1 class="counter" data-target="3000">
+
+                </h1>
+                <h2>
+                    Prodotti
+                </h2>
+            </div>
+        </div>
+        <div class="section">
+            <h1>
+                Lavoro incentrato su professionalità e velocità
+            </h1>
+            <h2>
+                Seleziona la tua marca preferita dalla nostra piattaforma di E-commerce. E-drone è pensato per essere intuitivo e
+                professionale, inoltre l'azienda garantisce rapidità in termini di consegna e qualità dei prodotti offerti.
+            </h2>
+            <div class="containerSection">
+                <div class="S-element hidden-element">
+                    <img src="qualita.png" style="height: 100px; width: 100px;"> 
+                    <h1>
+                        Qualità
+                    </h1>
+                    <h3>
+                        I nosti prodotti vengono certificati con alti standard di qualità.
+                    </h3>
+                </div>
+                <div class="S-element hidden-element">
+                    <img src="precisione.png" style="height: 100px; width: 100px;">
+                    <h1>
+                        Precisione
+                    </h1>
+                    <h3>
+                        La cura dei nostri prodotti è il nostro punto di forza
+                    </h3>
+                </div>
+                <div class="S-element hidden-element">
+                    <img src="foglia.png" style="height: 100px; width: 100px;">
+                    <h1>
+                        Sostenibilità
+                    </h1>
+                    <h3>
+                        I prodotti E-drone vengono consegnati attraverso processi del tutto green
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <section class="sectionP" id="sezionePrincipale">
+                <div>
+                    <h1 style="font-size: 30px; font-family: Inter; color: black;">
+                        Scegli il formato
+                    </h1>
+                </div>
+                <div class="sectionPrincipal">
+                    <div class="column">
+                        <div onclick="csvImporter()">
+                            <h1>
+                                CSV
+                            </h1>
+                            <h2>
+                                Importa i dati utilizzando il formato tabellare CSV
+                            </h2>
+                        </div>
+                        <div onclick="xmlImporter()">
+                            <h1>
+                                XML
+                            </h1>
+                            <h2>
+                                Importa i dati sfruttando la moderna struttura XML
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div onclick="txtImporter()">
+                            <h1>
+                                TXT
+                            </h1>
+                            <h2>
+                                Importa i dati leggendo un file testuale
+                            </h2>
+                        </div>
+                        <div onclick="jsonImporter()">
+                            <h1>
+                                JSON
+                            </h1>
+                            <h2>
+                                Importa i dati attraverso un file in formato JSON
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="col">
+                    <h3>Azienda</h3>
+                    <a href="catalogo.html">Prodotti</a>
+                    <a href="FAQ.html">FAQ</a>
+                    <a href="#">Lavora con noi</a>
+                </div>
+
+                <div class="col">
+                    <h3>Supporto</h3>
+                    <a href="#">FAQ</a>
+                    <a href="#">Assistenza</a>
+                    <a href="#">Privacy</a>
+                </div>
+
+                <div class="col">
+                    <h3>Social</h3>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
+        </footer>
+    </body>
+    <script src="E-commerceScript.js"></script>
+</html>

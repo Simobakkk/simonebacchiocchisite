@@ -207,7 +207,7 @@
                 <div style="margin: 10px 5px;" align="center">
                     <input type="inputElement" id="name" name="name" placeholder="Il tuo nome" required><br><br>
                     <input type="password" id="password" name="password" placeholder="La tua password" required><br><br>
-                    <input type="submit" id="password" value="Login" onclick="verificaDati()"><br>
+                    <input type="submit" id="password" value="Login" onclick="loadData()"><br>
                     <h3>
                         o
                     </h3>
@@ -245,8 +245,12 @@
         </div>
     </body>
     <script>
-        function verificaDati(){
-
+        function loadData(){
+            var name = document.getElementById("name").value;
+            localStorage.setItem("nome", name);
+            document.getElementById("name").value = "";
+            document.getElementById("password").value = "";
+            window.location.href = "E_commerceHP.html"
         }
     </script>
 </html>
