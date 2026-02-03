@@ -6,7 +6,7 @@ async function criptRSA(){
     const chiave_pubblica = await ris.json(); // risposta convertita in JSON
     const e = chiave_pubblica.e;
     const n = chiave_pubblica.n;
-    let c; //messaggio cifrato
+    let c = []; //messaggio cifrato
     for(let i=0; i<textASCII.length; i++){
         c.push(Math.pow(textASCII[i], e) % n); 
     }

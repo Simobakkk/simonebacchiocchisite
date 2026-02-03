@@ -4,11 +4,11 @@ async function decriptRSA(){
     const d = chiave_privata.d;
     const n = chiave_privata.n;
     const c = JSON.parse(localStorage.getItem("messaggio_cifrato"));
-    let m; //messaggio originale 
+    let m = []; //messaggio originale 
     for(let i=0; i<c.length; i++){
         m.push(Math.pow(parseInt(c[i]), d) % n);
     }
-    m = deconversionASCII(m_s);
+    m = deconversionASCII(m);
     m = document.getElementById("text").innerHTML;
 }
 
