@@ -10,6 +10,50 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
     <body align="center">
+        <script src="E-commerceScript.js"></script>
+        <script>
+            // Variabile globale per salvare i droni
+            let droni = [];
+            
+            async function caricaTXT() {
+                // Chiamo txtImporter e ASPETTO il risultato
+                const risultato = await txtImporter('dati/droniTXT.txt');
+                // Salvo l'array restituito nella variabile globale
+                droni = risultato;
+                // Salvo anche nel localStorage per la seconda pagina
+                localStorage.setItem('droni', JSON.stringify(droni));
+                console.log('Droni caricati:', droni);
+            }
+            
+            async function caricaCSV() {
+                const risultato = await csvImporter('dati/droniCSV.csv');
+                droni = risultato;
+                localStorage.setItem('droni', JSON.stringify(droni));
+                console.log('Droni caricati:', droni);
+            }
+            
+            async function caricaXML() {
+                const risultato = await xmlImporter('dati/droniXML.xml');
+                droni = risultato;
+                localStorage.setItem('droni', JSON.stringify(droni));
+                console.log('Droni caricati:', droni);
+            }
+            
+            async function caricaJSON() {
+                const risultato = await jsonImporter('dati/droniJSON.json');
+                droni = risultato;
+                localStorage.setItem('droni', JSON.stringify(droni));
+                console.log('Droni caricati:', droni);
+            }
+            
+            function vaiAllaRicerca() {
+                if (droni.length === 0) {
+                    alert('Carica prima dei droni!');
+                    return;
+                }
+                window.location.href = 'droneSelection_HP.html';
+            }
+        </script>
         <nav>
             <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
             <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;" id="greeting"></h2></div>
@@ -180,49 +224,5 @@
             </div>
             <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
         </footer>
-        <script src="E-commerceScript.js"></script>
-        <script>
-            // Variabile globale per salvare i droni
-            let droni = [];
-            
-            async function caricaTXT() {
-                // Chiamo txtImporter e ASPETTO il risultato
-                const risultato = await txtImporter('dati/droniTXT.txt');
-                // Salvo l'array restituito nella variabile globale
-                droni = risultato;
-                // Salvo anche nel localStorage per la seconda pagina
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
-            }
-            
-            async function caricaCSV() {
-                const risultato = await csvImporter('dati/droniCSV.csv');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
-            }
-            
-            async function caricaXML() {
-                const risultato = await xmlImporter('dati/droniXML.xml');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
-            }
-            
-            async function caricaJSON() {
-                const risultato = await jsonImporter('dati/droniJSON.json');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
-            }
-            
-            function vaiAllaRicerca() {
-                if (droni.length === 0) {
-                    alert('Carica prima dei droni!');
-                    return;
-                }
-                window.location.href = 'droneSelection_HP.html';
-            }
-        </script>
     </body>
 </html>
