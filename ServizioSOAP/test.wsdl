@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ConversioneService"
+    targetNamespace="https://simonebacchiocchi.infinityfreeapp.com/"
+    xmlns:tns="https://simonebacchiocchi.infinityfreeapp.com/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <message name="cmToPolliciRequest">
+        <part name="cm" type="xsd:float"/>
+    </message>
+
+    <message name="cmToPolliciResponse">
+        <part name="return" type="xsd:float"/>
+    </message>
+
+    <message name="polliciToCmRequest">
+        <part name="pollici" type="xsd:float"/>
+    </message>
+
+    <message name="polliciToCmResponse">
+        <part name="return" type="xsd:float"/>
+    </message>
+
+    <portType name="ConversionePortType">
+        <operation name="cmToPollici">
+            <input message="tns:cmToPolliciRequest"/>
+            <output message="tns:cmToPolliciResponse"/>
+        </operation>
+
+        <operation name="polliciToCm">
+            <input message="tns:polliciToCmRequest"/>
+            <output message="tns:polliciToCmResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="ConversioneBinding" type="tns:ConversionePortType">
+        <soap:binding style="rpc"
+            transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="cmToPollici">
+            <soap:operation soapAction="cmToPollici"/>
+            <input>
+                <soap:body use="encoded"
+                    namespace="https://simonebacchiocchi.infinityfreeapp.com/"
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded"
+                    namespace="https://simonebacchiocchi.infinityfreeapp.com/"
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+
+        <operation name="polliciToCm">
+            <soap:operation soapAction="polliciToCm"/>
+            <input>
+                <soap:body use="encoded"
+                    namespace="https://simonebacchiocchi.infinityfreeapp.com/"
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded"
+                    namespace="https://simonebacchiocchi.infinityfreeapp.com/"
+                    encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+
+    </binding>
+
+    <service name="ConversioneService">
+        <port name="ConversionePort" binding="tns:ConversioneBinding">
+            <soap:address location="https://simonebacchiocchi.infinityfreeapp.com/server.php"/>
+        </port>
+    </service>
+
+</definitions>

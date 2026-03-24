@@ -380,6 +380,7 @@ nav li{
     text-align: center;
     margin-top: 30px;
     color: white;
+    font-family: Inter;
 }
 /*sezione informativa MANOLIVA*/
 .section{
@@ -491,4 +492,43 @@ nav li{
     font-family: Inter;
     font-size: 15px;
     color: rgb(120, 120, 120);
+}
+
+.search-container {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #9ca3af;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    font-size: 0.95rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
 }
