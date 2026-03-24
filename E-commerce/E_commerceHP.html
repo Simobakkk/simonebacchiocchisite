@@ -25,6 +25,102 @@
                 <span></span>
             </div>
         </nav>
+
+        <script src="E-commerceScript.js"></script>
+        <script>
+            let droni = [];
+            
+            async function caricaCSV() {
+                try {
+                    const risultato = await csvImporter('dati/droniCSV.csv');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da CSV`;
+                    }
+                    console.log('Droni caricati da CSV:', droni);
+                } catch (error) {
+                    console.error('Errore CSV:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore CSV: ${error.message}`;
+                    }
+                }
+            }
+            
+            async function caricaXML() {
+                try {
+                    const risultato = await xmlImporter('dati/droniXML.xml');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da XML`;
+                    }
+                    console.log('Droni caricati da XML:', droni);
+                } catch (error) {
+                    console.error('Errore XML:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore XML: ${error.message}`;
+                    }
+                }
+            }
+            
+            async function caricaTXT() {
+                try {
+                    const risultato = await txtImporter('dati/droniTXT.txt');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da TXT`;
+                    }
+                    console.log('Droni caricati da TXT:', droni);
+                } catch (error) {
+                    console.error('Errore TXT:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore TXT: ${error.message}`;
+                    }
+                }
+            }
+            
+            async function caricaJSON() {
+                try {
+                    const risultato = await jsonImporter('dati/droniJSON.json');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da JSON`;
+                    }
+                    console.log('Droni caricati da JSON:', droni);
+                } catch (error) {
+                    console.error('Errore JSON:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore JSON: ${error.message}`;
+                    }
+                }
+            }
+            
+            function vaiAllaRicerca() {
+                if (droni.length === 0) {
+                    alert('⚠️ Carica prima dei droni! Seleziona un formato (CSV, XML, TXT o JSON)');
+                    return;
+                }
+                window.location.href = 'droneSelection_HP.html';
+            }
+            
+            console.log('Script caricato. Funzioni disponibili:', {
+                csv: typeof csvImporter,
+                xml: typeof xmlImporter,
+                txt: typeof txtImporter,
+                json: typeof jsonImporter
+            });
+        </script>
         
         <div class="mainContainer"> 
             <section class="sectionHP">
@@ -156,100 +252,5 @@
             <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
         </footer>
         
-        <script src="E-commerceScript.js"></script>
-        <script>
-            let droni = [];
-            
-            async function caricaCSV() {
-                try {
-                    const risultato = await csvImporter('dati/droniCSV.csv');
-                    droni = risultato;
-                    localStorage.setItem('droni', JSON.stringify(droni));
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da CSV`;
-                    }
-                    console.log('Droni caricati da CSV:', droni);
-                } catch (error) {
-                    console.error('Errore CSV:', error);
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore CSV: ${error.message}`;
-                    }
-                }
-            }
-            
-            async function caricaXML() {
-                try {
-                    const risultato = await xmlImporter('dati/droniXML.xml');
-                    droni = risultato;
-                    localStorage.setItem('droni', JSON.stringify(droni));
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da XML`;
-                    }
-                    console.log('Droni caricati da XML:', droni);
-                } catch (error) {
-                    console.error('Errore XML:', error);
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore XML: ${error.message}`;
-                    }
-                }
-            }
-            
-            async function caricaTXT() {
-                try {
-                    const risultato = await txtImporter('dati/droniTXT.txt');
-                    droni = risultato;
-                    localStorage.setItem('droni', JSON.stringify(droni));
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da TXT`;
-                    }
-                    console.log('Droni caricati da TXT:', droni);
-                } catch (error) {
-                    console.error('Errore TXT:', error);
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore TXT: ${error.message}`;
-                    }
-                }
-            }
-            
-            async function caricaJSON() {
-                try {
-                    const risultato = await jsonImporter('dati/droniJSON.json');
-                    droni = risultato;
-                    localStorage.setItem('droni', JSON.stringify(droni));
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da JSON`;
-                    }
-                    console.log('Droni caricati da JSON:', droni);
-                } catch (error) {
-                    console.error('Errore JSON:', error);
-                    const statusDiv = document.getElementById('status');
-                    if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore JSON: ${error.message}`;
-                    }
-                }
-            }
-            
-            function vaiAllaRicerca() {
-                if (droni.length === 0) {
-                    alert('⚠️ Carica prima dei droni! Seleziona un formato (CSV, XML, TXT o JSON)');
-                    return;
-                }
-                window.location.href = 'droneSelection_HP.html';
-            }
-            
-            console.log('Script caricato. Funzioni disponibili:', {
-                csv: typeof csvImporter,
-                xml: typeof xmlImporter,
-                txt: typeof txtImporter,
-                json: typeof jsonImporter
-            });
-        </script>
     </body>
 </html>

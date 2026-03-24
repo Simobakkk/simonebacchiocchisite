@@ -112,14 +112,14 @@ async function jsonImporter(url) {
 }
 
 // Filtra i droni in base alla ricerca
-let droni = [];
+let droniFiltrati = [];
     
 // Carica i droni dal localStorage
 function caricaDroni() {
     const salvati = localStorage.getItem('droni');
     if (salvati) {
-        droni = JSON.parse(salvati);
-        mostraTutti(droni);
+        droniFiltrati = JSON.parse(salvati);
+        mostraTutti(droniFiltrati);
     } else {
         document.getElementById('droniContainer').innerHTML = 'Nessun drone caricato';
     }
