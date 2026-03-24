@@ -43,9 +43,8 @@ hamburger.addEventListener('click', () => {
 });
 
 /*lettura file*/
-//CSV Importer - Legge file CSV
+// CSV Importer
 async function csvImporter(url) {
-  window.location.href = "droneSelection_HP.html";
     const response = await fetch(url);
     const text = await response.text();
     const lines = text.trim().split('\n');
@@ -60,17 +59,18 @@ async function csvImporter(url) {
         });
         data.push(row);
     }
+    
+    window.location.href = "droneSelection_HP.html";
     return data;
 }
 
-//XML Importer - Legge file XML
+// XML Importer
 async function xmlImporter(url) {
-  window.location.href = "droneSelection_HP.html";
     const response = await fetch(url);
     const text = await response.text();
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(text, 'text/xml');
-    const items = xmlDoc.getElementsByTagName('item');
+    const items = xmlDoc.getElementsByTagName('droni');
     const data = [];
     
     for (let i = 0; i < items.length; i++) {
@@ -81,29 +81,84 @@ async function xmlImporter(url) {
         }
         data.push(row);
     }
+    
+    window.location.href = "droneSelection_HP.html";
     return data;
 }
 
-//TXT Importer - Legge file TXT
+// TXT Importer
 async function txtImporter(url) {
-        window.location.href = "droneSelection_HP.html";
-        const response = await fetch(url);
-        const text = await response.text();
-        
-        // Converte il TXT in oggetto
-        const dati = {};
-        text.split('\n').forEach(line => {
-            const [key, value] = line.split(':').map(s => s.trim());
-            if (key && value) dati[key] = value;
-        });
-        
-        return dati;
-    }
-
-//JSON Importer - Legge file JSON
-async function jsonImporter(url) {
+    const response = await fetch(url);
+    const text = await response.text();
+    
+    // Converte il TXT in oggetto
+    const data = {};
+    text.split('\n').forEach(line => {
+        const [key, value] = line.split(':').map(s => s.trim());
+        if (key && value) data[key] = value; 
+    });
+    
     window.location.href = "droneSelection_HP.html";
+    return [data];  // Restituisce array per uniformità con gli altri
+}
+
+// JSON Importer
+async function jsonImporter(url) {
     const response = await fetch(url);
     const data = await response.json();
-    return data;
+    
+    window.location.href = "droneSelection_HP.html";
+    return data.droni;
 }
+
+// Filtra i droni in base alla ricerca
+let droni = [];
+    
+// Carica i droni dal localStorage
+function caricaDroni() {
+    const salvati = localStorage.getItem('droni');
+    if (salvati) {
+        droni = JSON.parse(salvati);
+        mostraTutti(droni);
+    } else {
+        document.getElementById('droniContainer').innerHTML = 'Nessun drone caricato';
+    }
+}
+
+function mostraTutti(droniDaMostrare) {
+
+    const container = document.getElementById('droniContainer');
+            
+    if (droniDaMostrare.length === 0) {
+        container.innerHTML = '<div class="no-results">Nessun drone trovato</div>';
+        return;
+    }
+    container.innerHTML = droniDaMostrare.map(d => {
+        const nome = d.nome || d.Nome || 'Senza nome';
+        const modello = d.modello || d.Modello || '';
+        const prezzo = d.prezzo || d.Prezzo || '0';
+        
+        return `
+            <div class="drone-card">
+                <div class="drone-image">✈️</div>
+                <div>
+                    <div class="drone-name">${nome}</div>
+                    <div>${modello}</div>
+                    <div class="drone-price">€ ${parseInt(prezzo).toLocaleString()}</div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function filtraDroni() {
+    const testo = document.getElementById('search-input').value.toLowerCase();
+    const filtrati = droni.filter(d => {
+        const nome = (d.nome || d.Nome || '').toLowerCase();
+        return nome.includes(testo);
+    });
+    mostraDroni(filtrati);
+}
+
+// Aggiungi evento per la ricerca
+document.getElementById('search-input').addEventListener('input', filtraDroni());

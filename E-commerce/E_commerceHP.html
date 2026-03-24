@@ -118,7 +118,7 @@
                 </div>
                 <div class="sectionPrincipal">
                     <div class="column">
-                        <div onclick="csvImporter('droniCSV.csv')">
+                        <div onclick="caricaCSV()">
                             <h1>
                                 CSV
                             </h1>
@@ -126,7 +126,7 @@
                                 Importa i dati utilizzando il formato tabellare CSV
                             </h2>
                         </div>
-                        <div onclick="xmlImporter('droniXML.xml')">
+                        <div onclick="caricaXML()">
                             <h1>
                                 XML
                             </h1>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div onclick="txtImporter('droniTXT.txt')">
+                        <div onclick="caricaTXT()">
                             <h1>
                                 TXT
                             </h1>
@@ -144,7 +144,7 @@
                                 Importa i dati leggendo un file testuale
                             </h2>
                         </div>
-                        <div onclick="jsonImporter('droniJSON.json')">
+                        <div onclick="caricaJSON()">
                             <h1>
                                 JSON
                             </h1>
@@ -183,3 +183,48 @@
     </body>
     <script src="E-commerceScript.js"></script>
 </html>
+
+<script src="dati.js"></script>
+<script>
+    // Variabile globale per salvare i droni
+    let droni = [];
+    
+    async function caricaTXT() {
+        // Chiamo txtImporter e ASPETTO il risultato
+        const risultato = await txtImporter('dati/droniTXT.txt');
+        // Salvo l'array restituito nella variabile globale
+        droni = risultato;
+        // Salvo anche nel localStorage per la seconda pagina
+        localStorage.setItem('droni', JSON.stringify(droni));
+        console.log('Droni caricati:', droni);
+    }
+    
+    async function caricaCSV() {
+        const risultato = await csvImporter('dati/droniCSV.csv');
+        droni = risultato;
+        localStorage.setItem('droni', JSON.stringify(droni));
+        console.log('Droni caricati:', droni);
+    }
+    
+    async function caricaXML() {
+        const risultato = await xmlImporter('dati/droniXML.xml');
+        droni = risultato;
+        localStorage.setItem('droni', JSON.stringify(droni));
+        console.log('Droni caricati:', droni);
+    }
+    
+    async function caricaJSON() {
+        const risultato = await jsonImporter('dati/droniJSON.json');
+        droni = risultato;
+        localStorage.setItem('droni', JSON.stringify(droni));
+        console.log('Droni caricati:', droni);
+    }
+    
+    function vaiAllaRicerca() {
+        if (droni.length === 0) {
+            alert('Carica prima dei droni!');
+            return;
+        }
+        window.location.href = 'droneSelection_HP.html';
+    }
+</script>
