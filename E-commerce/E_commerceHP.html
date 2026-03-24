@@ -229,7 +229,9 @@
                 }
             }
 
-            window.location.href = 'droneSelection_HP.html';
+            if(statusDiv){
+                window.location.href = 'droneSelection_HP.html';
+            }
             
             console.log('Script caricato. Funzioni disponibili:', {
                 csv: typeof csvImporter,
