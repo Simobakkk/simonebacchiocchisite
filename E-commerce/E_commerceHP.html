@@ -5,14 +5,14 @@
             DroneSell - Acquista il tuo drone
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="e-drone_logo.png">
-        <link rel="stylesheet" href="style.css">type="image/png" href="e-drone_logo.png">
+        <link rel="icon" href="e-drone_logo.png" type="image/png">
+        <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
     <body align="center">
         <nav>
             <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
-            <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;" id="greeting"></h2></div>
+            <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;"></h2></div>
             <ul>
                 <li><a href="Homepage.html">Home</a></li>
                 <li><a href="catalogo.html">Prodotti</a></li>
@@ -25,6 +25,7 @@
                 <span></span>
             </div>
         </nav>
+        
         <div class="mainContainer"> 
             <section class="sectionHP">
                 <div class="mainDiv">
@@ -46,14 +47,11 @@
                 </div>
             </section>
         </div>
+        
         <div class="container">
             <div class="ml_description hidden-element">
-                <h1>
-                    SCOPRI
-                </h1>
-                <h2>
-                    Unione di efficienza e dedizione
-                </h2>
+                <h1>SCOPRI</h1>
+                <h2>Unione di efficienza e dedizione</h2>
                 <h3>
                     Da sempre dimostriamo ai nostri clienti professionalità nella consegna e nella cura dei nostri prodotti.
                     Acquista il tuo drone in tempi record.
@@ -64,18 +62,13 @@
             </div>
 
             <div class="ml_number hidden-element">
-                <h1 class="counter" data-target="3000">
-
-                </h1>
-                <h2>
-                    Prodotti
-                </h2>
+                <h1 class="counter" data-target="3000"></h1>
+                <h2>Prodotti</h2>
             </div>
         </div>
+        
         <div class="section">
-            <h1>
-                Lavoro incentrato su professionalità e velocità
-            </h1>
+            <h1>Lavoro incentrato su professionalità e velocità</h1>
             <h2>
                 Seleziona la tua marca preferita dalla nostra piattaforma di E-commerce. E-drone è pensato per essere intuitivo e
                 professionale, inoltre l'azienda garantisce rapidità in termini di consegna e qualità dei prodotti offerti.
@@ -83,78 +76,62 @@
             <div class="containerSection">
                 <div class="S-element hidden-element">
                     <img src="qualita.png" style="height: 100px; width: 100px;"> 
-                    <h1>
-                        Qualità
-                    </h1>
-                    <h3>
-                        I nosti prodotti vengono certificati con alti standard di qualità.
-                    </h3>
+                    <h1>Qualità</h1>
+                    <h3>I nosti prodotti vengono certificati con alti standard di qualità.</h3>
                 </div>
                 <div class="S-element hidden-element">
                     <img src="precisione.png" style="height: 100px; width: 100px;">
-                    <h1>
-                        Precisione
-                    </h1>
-                    <h3>
-                        La cura dei nostri prodotti è il nostro punto di forza
-                    </h3>
+                    <h1>Precisione</h1>
+                    <h3>La cura dei nostri prodotti è il nostro punto di forza</h3>
                 </div>
                 <div class="S-element hidden-element">
                     <img src="foglia.png" style="height: 100px; width: 100px;">
-                    <h1>
-                        Sostenibilità
-                    </h1>
-                    <h3>
-                        I prodotti E-drone vengono consegnati attraverso processi del tutto green
-                    </h3>
+                    <h1>Sostenibilità</h1>
+                    <h3>I prodotti E-drone vengono consegnati attraverso processi del tutto green</h3>
                 </div>
             </div>
         </div>
+        
         <section class="sectionP" id="sezionePrincipale">
-                <div>
-                    <h1 style="font-size: 30px; font-family: Inter; color: black;">
-                        Scegli il formato
-                    </h1>
-                </div>
-                <div class="sectionPrincipal">
-                    <div class="column">
-                        <div onclick="caricaCSV()">
-                            <h1>
-                                CSV
-                            </h1>
-                            <h2>
-                                Importa i dati utilizzando il formato tabellare CSV
-                            </h2>
-                        </div>
-                        <div onclick="caricaXML()">
-                            <h1>
-                                XML
-                            </h1>
-                            <h2>
-                                Importa i dati sfruttando la moderna struttura XML
-                            </h2>
-                        </div>
+            <div>
+                <h1 style="font-size: 30px; font-family: Inter; color: black;">
+                    Scegli il formato
+                </h1>
+            </div>
+            <div class="sectionPrincipal">
+                <div class="column">
+                    <div onclick="caricaCSV()" style="cursor: pointer;">
+                        <h1>CSV</h1>
+                        <h2>Importa i dati utilizzando il formato tabellare CSV</h2>
                     </div>
-                    <div class="column">
-                        <div onclick="caricaTXT()">
-                            <h1>
-                                TXT
-                            </h1>
-                            <h2>
-                                Importa i dati leggendo un file testuale
-                            </h2>
-                        </div>
-                        <div onclick="caricaJSON()">
-                            <h1>
-                                JSON
-                            </h1>
-                            <h2>
-                                Importa i dati attraverso un file in formato JSON
-                            </h2>
-                        </div>
+                    <div onclick="caricaXML()" style="cursor: pointer;">
+                        <h1>XML</h1>
+                        <h2>Importa i dati sfruttando la moderna struttura XML</h2>
                     </div>
                 </div>
+                <div class="column">
+                    <div onclick="caricaTXT()" style="cursor: pointer;">
+                        <h1>TXT</h1>
+                        <h2>Importa i dati leggendo un file testuale</h2>
+                    </div>
+                    <div onclick="caricaJSON()" style="cursor: pointer;">
+                        <h1>JSON</h1>
+                        <h2>Importa i dati attraverso un file in formato JSON</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STATUS per feedback -->
+            <div id="status" style="margin-top: 30px; padding: 15px; font-family: Inter; font-size: 16px; border-radius: 10px;"></div>
+            
+            <!-- BOTTONE per andare alla ricerca -->
+            <div style="margin-top: 40px; margin-bottom: 40px;">
+                <button onclick="vaiAllaRicerca()" style="padding: 15px 40px; font-size: 18px; font-weight: bold; background: #3b82f6; color: white; border: none; border-radius: 10px; cursor: pointer; font-family: Inter;">
+                    🔍 Vai alla Ricerca Droni
+                </button>
+            </div>
         </section>
+        
         <footer class="footer">
             <div class="container">
                 <div class="col">
@@ -163,14 +140,12 @@
                     <a href="FAQ.html">FAQ</a>
                     <a href="#">Lavora con noi</a>
                 </div>
-
                 <div class="col">
                     <h3>Supporto</h3>
                     <a href="#">FAQ</a>
                     <a href="#">Assistenza</a>
                     <a href="#">Privacy</a>
                 </div>
-
                 <div class="col">
                     <h3>Social</h3>
                     <a href="#">Instagram</a>
@@ -180,52 +155,101 @@
             </div>
             <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
         </footer>
+        
         <script src="E-commerceScript.js"></script>
         <script>
-            // Variabile globale per salvare i droni
             let droni = [];
             
-            async function caricaTXT() {
-                // Chiamo txtImporter e ASPETTO il risultato
-                const risultato = await txtImporter('dati/droniTXT.txt');
-                // Salvo l'array restituito nella variabile globale
-                droni = risultato;
-                // Salvo anche nel localStorage per la seconda pagina
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
-            }
-            
             async function caricaCSV() {
-                const risultato = await csvImporter('dati/droniCSV.csv');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
+                try {
+                    const risultato = await csvImporter('dati/droniCSV.csv');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da CSV`;
+                    }
+                    console.log('Droni caricati da CSV:', droni);
+                } catch (error) {
+                    console.error('Errore CSV:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore CSV: ${error.message}`;
+                    }
+                }
             }
             
             async function caricaXML() {
-                const risultato = await xmlImporter('dati/droniXML.xml');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
+                try {
+                    const risultato = await xmlImporter('dati/droniXML.xml');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da XML`;
+                    }
+                    console.log('Droni caricati da XML:', droni);
+                } catch (error) {
+                    console.error('Errore XML:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore XML: ${error.message}`;
+                    }
+                }
+            }
+            
+            async function caricaTXT() {
+                try {
+                    const risultato = await txtImporter('dati/droniTXT.txt');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da TXT`;
+                    }
+                    console.log('Droni caricati da TXT:', droni);
+                } catch (error) {
+                    console.error('Errore TXT:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore TXT: ${error.message}`;
+                    }
+                }
             }
             
             async function caricaJSON() {
-                const risultato = await jsonImporter('dati/droniJSON.json');
-                droni = risultato;
-                localStorage.setItem('droni', JSON.stringify(droni));
-                console.log('Droni caricati:', droni);
+                try {
+                    const risultato = await jsonImporter('dati/droniJSON.json');
+                    droni = risultato;
+                    localStorage.setItem('droni', JSON.stringify(droni));
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da JSON`;
+                    }
+                    console.log('Droni caricati da JSON:', droni);
+                } catch (error) {
+                    console.error('Errore JSON:', error);
+                    const statusDiv = document.getElementById('status');
+                    if (statusDiv) {
+                        statusDiv.innerHTML = `❌ Errore JSON: ${error.message}`;
+                    }
+                }
             }
             
             function vaiAllaRicerca() {
                 if (droni.length === 0) {
-                    alert('Carica prima dei droni!');
+                    alert('⚠️ Carica prima dei droni! Seleziona un formato (CSV, XML, TXT o JSON)');
                     return;
                 }
                 window.location.href = 'droneSelection_HP.html';
             }
-            window.onload = function() {
-                console.log('Funzioni caricate:', typeof caricaCSV);
-            };
+            
+            console.log('Script caricato. Funzioni disponibili:', {
+                csv: typeof csvImporter,
+                xml: typeof xmlImporter,
+                txt: typeof txtImporter,
+                json: typeof jsonImporter
+            });
         </script>
     </body>
 </html>
