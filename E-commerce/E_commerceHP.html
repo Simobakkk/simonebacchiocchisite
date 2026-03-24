@@ -152,7 +152,8 @@
         <script src="E-commerceScript.js"></script>
         <script>
             let droni = [];
-            
+            let caricato = false; 
+
             async function caricaCSV() {
                 try {
                     const risultato = await csvImporter('dati/droniCSV.csv');
@@ -163,6 +164,7 @@
                         statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da CSV`;
                     }
                     console.log('Droni caricati da CSV:', droni);
+                    caricato = true;
                 } catch (error) {
                     console.error('Errore CSV:', error);
                     const statusDiv = document.getElementById('status');
@@ -182,6 +184,7 @@
                         statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da XML`;
                     }
                     console.log('Droni caricati da XML:', droni);
+                    caricato = true;
                 } catch (error) {
                     console.error('Errore XML:', error);
                     const statusDiv = document.getElementById('status');
@@ -201,6 +204,7 @@
                         statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da TXT`;
                     }
                     console.log('Droni caricati da TXT:', droni);
+                    caricato = true;
                 } catch (error) {
                     console.error('Errore TXT:', error);
                     const statusDiv = document.getElementById('status');
@@ -220,6 +224,7 @@
                         statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da JSON`;
                     }
                     console.log('Droni caricati da JSON:', droni);
+                    caricato = true;
                 } catch (error) {
                     console.error('Errore JSON:', error);
                     const statusDiv = document.getElementById('status');
@@ -229,7 +234,7 @@
                 }
             }
 
-            if(statusDiv){
+            if(caricato){
                 window.location.href = 'droneSelection_HP.html';
             }
             
