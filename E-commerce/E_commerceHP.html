@@ -15,7 +15,7 @@
             <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;"></h2></div>
             <ul>
                 <li><a href="Homepage.html">Home</a></li>
-                <li><a href="catalogo.html">Prodotti</a></li>
+                <li><a onclick="document.getElementById('sezionePrincipale').scrollIntoView({behavior: 'smooth'});">Prodotti</a></li>
                 <li><a href="carrello.html">Carrello</a></li>
                 <li><a href="FAQ.html">FAQ</a></li>
             </ul>
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="col">
                     <h3>Azienda</h3>
-                    <a href="catalogo.html">Prodotti</a>
+                    <a href="#sezionePrincipale.html">Prodotti</a>
                     <a href="FAQ.html">FAQ</a>
                     <a href="#">Lavora con noi</a>
                 </div>
@@ -161,7 +161,7 @@
                     localStorage.setItem('droni', JSON.stringify(droni));
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da CSV`;
+                        statusDiv.innerHTML = `caricati ${droni.length} droni da CSV`;
                     }
                     console.log('Droni caricati da CSV:', droni);
                     caricato = true;
@@ -169,7 +169,7 @@
                     console.error('Errore CSV:', error);
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore CSV: ${error.message}`;
+                        statusDiv.innerHTML = `Errore CSV: ${error.message}`;
                     }
                 }
             }
@@ -181,7 +181,7 @@
                     localStorage.setItem('droni', JSON.stringify(droni));
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da XML`;
+                        statusDiv.innerHTML = `Caricati ${droni.length} droni da XML`;
                     }
                     console.log('Droni caricati da XML:', droni);
                     caricato = true;
@@ -189,7 +189,7 @@
                     console.error('Errore XML:', error);
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore XML: ${error.message}`;
+                        statusDiv.innerHTML = `Errore XML: ${error.message}`;
                     }
                 }
             }
@@ -201,7 +201,7 @@
                     localStorage.setItem('droni', JSON.stringify(droni));
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da TXT`;
+                        statusDiv.innerHTML = `Caricati ${droni.length} droni da TXT`;
                     }
                     console.log('Droni caricati da TXT:', droni);
                     caricato = true;
@@ -209,7 +209,7 @@
                     console.error('Errore TXT:', error);
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `❌ Errore TXT: ${error.message}`;
+                        statusDiv.innerHTML = `Errore TXT: ${error.message}`;
                     }
                 }
             }
@@ -221,7 +221,7 @@
                     localStorage.setItem('droni', JSON.stringify(droni));
                     const statusDiv = document.getElementById('status');
                     if (statusDiv) {
-                        statusDiv.innerHTML = `✅ Caricati ${droni.length} droni da JSON`;
+                        statusDiv.innerHTML = `Caricati ${droni.length} droni da JSON`;
                     }
                     console.log('Droni caricati da JSON:', droni);
                     caricato = true;
@@ -247,3 +247,5 @@
         </script>
     </body>
 </html>
+
+

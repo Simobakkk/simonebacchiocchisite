@@ -531,36 +531,196 @@ nav li{
 .search-input::placeholder {
     color: #9ca3af;
 }
-.drone-card {
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 15px;
-    display: flex;
-    gap: 15px;
-    background: white;
-    border-radius: 10px;
-}
-        
-.drone-image {
-    width: 80px;
-    height: 80px;
-    background: #eee;
+/* Container principale */
+.droni-grid {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    font-size: 30px;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    gap: 90px;
+    padding: 20px;
 }
+
+/* Card */
+.drone-card {
+    background: white;
+    border-radius: 24px;
+    width: 45%;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+.drone-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.drone-card-inner {
+    position: relative;
+}
+
+/* Immagine */
+.drone-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    transition: transform 0.5s ease;
+}
+
+.drone-card:hover .image-placeholder {
+    transform: scale(1.1);
+}
+
+/* Badge */
+.drone-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* Info drone */
+.drone-info {
+    font-family: Inter;
+    padding: 20px;
+    background: white;
+}
+
 .drone-name {
-    font-weight: bold;
-    font-size: 18px;
+    font-family: calibri;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: #0a0a0a;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
 }
-        
+
+.drone-model {
+    font-family: calibri;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0 0 12px 0;
+    font-weight: 400;
+}
+
+/* Prezzo */
 .drone-price {
-    font-size: 20px;
-    font-weight: bold;
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    margin: 16px 0 20px 0;
+    padding: 12px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.price-currency {
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #3b82f6;
 }
+
+.price-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+}
+
+.price-period {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #94a3b8;
+    align-self: flex-end;
+    margin-bottom: 4px;
+}
+
+/* Azioni */
+.drone-actions {
+    margin-top: 8px;
+}
+
+.btn-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-details svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.btn-details:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+}
+
+.btn-details:hover svg {
+    transform: translateX(3px);
+}
+
+/* Animazione di ingresso */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.drone-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.drone-card:nth-child(1) { animation-delay: 0.05s; }
+.drone-card:nth-child(2) { animation-delay: 0.1s; }
+.drone-card:nth-child(3) { animation-delay: 0.15s; }
+.drone-card:nth-child(4) { animation-delay: 0.2s; }
+.drone-card:nth-child(5) { animation-delay: 0.25s; }
+.drone-card:nth-child(6) { animation-delay: 0.3s; }
         
 .no-results {
     text-align: center;

@@ -1,29 +1,202 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Carrello
-        </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="FAQ.html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body align="center">
-        <nav>
-            <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="catalogo.html">Prodotti</a></li>
-                <li><a href="carrello.html">Carrello</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </body>
-    <script src="E-commerceScript.js"></script>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Droni</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+    :root {
+        --primary: #0061ff;
+        --secondary: #60efff;
+        --bg: #f2f6fa;
+        --text: #1a1a1a;
+        --radius: 14px;
+        --transition: 0.35s ease;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+    }
+
+    header {
+        padding: 60px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    .faq-container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .faq-item {
+        background: white;
+        border-radius: var(--radius);
+        margin-bottom: 18px;
+        padding: 22px 26px;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .faq-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.15rem;
+        font-weight: 600;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        line-height: 1.6;
+        transition: var(--transition);
+        margin-top: 10px;
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+        transition: var(--transition);
+    }
+
+    .faq-item.active .icon {
+        transform: rotate(180deg);
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
+        <ul>
+            <li><a href="E_commerceHP.html">Home</a></li>
+            <li><a href="droneSelection_HP.html">Prodotti</a></li>
+            <li><a href="carrello.html">Carrello</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+<header>
+    <h1>FAQ – Domande Frequenti sui Droni</h1>
+</header>
+
+<div class="faq-container">
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Quali sono i tempi di consegna?</span>
+            <svg class="icon" viewBox="0 0 24 24"><path fill="white" d="M12 15.5l-7-7h14z"/></svg>
+        </div>
+        <div class="faq-answer">
+            I tempi di consegna variano da 2 a 5 giorni lavorativi, in base alla disponibilità e alla località.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>I droni sono coperti da garanzia?</span>
+            <svg class="icon" viewBox="0 0 24 24"><path fill="white" d="M12 15.5l-7-7h14z"/></svg>
+        </div>
+        <div class="faq-answer">
+            Tutti i droni includono una garanzia di 24 mesi contro difetti di fabbrica e malfunzionamenti non dovuti a uso improprio.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>È possibile restituire un drone?</span>
+            <svg class="icon" viewBox="0 0 24 24"><path fill="white" d="M12 15.5l-7-7h14z"/></svg>
+        </div>
+        <div class="faq-answer">
+            Accettiamo resi entro 14 giorni dalla consegna, purché il prodotto sia integro e completo di accessori.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Offrite assistenza tecnica?</span>
+            <svg class="icon" viewBox="0 0 24 24"><path fill="white" d="M12 15.5l-7-7h14z"/></svg>
+        </div>
+        <div class="faq-answer">
+            Sì, il nostro team tecnico può assisterti con configurazioni, riparazioni e aggiornamenti firmware.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>Serve una licenza per utilizzare i droni?</span>
+            <svg class="icon" viewBox="0 0 24 24"><path fill="white" d="M12 15.5l-7-7h14z"/></svg>
+        </div>
+        <div class="faq-answer">
+            Dipende dal peso e dal modello. Alcuni richiedono registrazione ENAC e, in certi casi, un attestato di competenza.
+        </div>
+    </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="col">
+            <h3>Azienda</h3>
+            <a href="catalogo.html">Prodotti</a>
+            <a href="FAQ.html">FAQ</a>
+            <a href="#">Lavora con noi</a>
+        </div>
+        <div class="col">
+            <h3>Supporto</h3>
+            <a href="#">FAQ</a>
+            <a href="#">Assistenza</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="col">
+            <h3>Social</h3>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+    </div>
+    <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
+</footer>
+
+<script>
+    document.querySelectorAll(".faq-item").forEach(item => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("active");
+        });
+    });
+</script>
+
+</body>
 </html>
