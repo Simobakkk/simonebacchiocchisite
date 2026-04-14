@@ -14,9 +14,6 @@ function animateCounter(element, start, end, duration) {
   requestAnimationFrame(update);
 }
 
-/*greeting*/
-document.getElementById("greeting").textContent = localStorage.getItem("name");
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -130,28 +127,37 @@ async function jsonImporter(url) {
     return data.droni;
 }
 
-// Filtra i droni in base alla ricerca
-let droniFiltrati = [];
-    
-// Carica i droni dal localStorage
+let droniElenco = [];      // tutti i droni disponibili
+let droniCarrello = [];    // droni nel carrello
+
+// Carica droni dal localStorage
 function caricaDroni() {
-    const salvati = localStorage.getItem('droni');
-    if (salvati) {
-        droniFiltrati = JSON.parse(salvati);
-        mostraTutti(droniFiltrati);
-    } else {
-        document.getElementById('droniContainer').innerHTML = 'Nessun drone caricato';
+    if(document.body.id==="pagina-selezione"){
+        const salvati = localStorage.getItem('droni');
+        if (salvati) {
+            droniElenco = JSON.parse(salvati);
+            droniElenco = droniElenco.map((d, i) => ({
+                ...d,
+                id: d.id || Date.now() + i
+            }));
+            mostraTutti(droniElenco, "droniContainer");
+        } else {
+            const container = document.getElementById('droniContainer');
+            if (container) container.innerHTML = 'Nessun drone caricato';
+        }
     }
 }
 
-function mostraTutti(droniDaMostrare) {
-    const container = document.getElementById('droniContainer');
-    
+// Mostra un elenco di droni in un container
+function mostraTutti(droniDaMostrare, containerTarget) {
+    const container = document.getElementById(containerTarget);
+    if (!container) return;
+
     if (!droniDaMostrare || droniDaMostrare.length === 0) {
         container.innerHTML = '<div class="no-results">Nessun drone trovato</div>';
         return;
     }
-    
+
     container.innerHTML = droniDaMostrare.map((drone, index) => {
         const nome = drone.nome || drone.Nome || drone.name || 'Senza nome';
         const modello = drone.modello || drone.Modello || '';
@@ -162,7 +168,9 @@ function mostraTutti(droniDaMostrare) {
             <div class="drone-card" style="animation-delay: ${index * 0.05}s">
                 <div class="drone-card-inner">
                     <div class="drone-image">
-                        <div class="image-placeholder"><img src="https://static.bhphotovideo.com/explora/sites/default/files/dji_mavic_pro_mavic_1.jpg" width="100%"></div>
+                        <div class="image-placeholder">
+                            <img src="https://static.bhphotovideo.com/explora/sites/default/files/dji_mavic_pro_mavic_1.jpg" width="100%">
+                        </div>
                         <div class="drone-badge">${parseInt(prezzo) > 5000 ? 'Premium' : 'Standard'}</div>
                     </div>
                     <div class="drone-info">
@@ -172,9 +180,10 @@ function mostraTutti(droniDaMostrare) {
                             <span class="price-currency">€</span>
                             <span class="price-value">${parseInt(prezzo).toLocaleString()}</span>
                             <span class="price-period">.00</span>
+                            <button class="add-to-carrel" onclick="add_to_carrel(${drone.id})">+</button>
                         </div>
                         <div class="drone-actions">
-                            <button class="btn-details" onclick="apriDettagli(${JSON.stringify(drone).replace(/"/g, '&quot;')})">
+                            <button class="btn-details" onclick="apriDettagli(${drone.id})">
                                 Dettagli
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -184,25 +193,62 @@ function mostraTutti(droniDaMostrare) {
                     </div>
                 </div>
             </div>
-          </div>
+        </div>
         `;
     }).join('');
 }
 
+// Filtra i droni per nome
 function filtraDroni() {
-    const testo = document.getElementById('search-input').value.toLowerCase();
-    const filtrati = droniFiltrati.filter(d => {
+    const input = document.getElementById('search-input');
+    if (!input) return;
+    const testo = input.value.toLowerCase();
+    const filtrati = droniElenco.filter(d => {
         const nome = (d.nome || d.Nome || '').toLowerCase();
         return nome.includes(testo);
     });
-    mostraTutti(filtrati);
+    mostraTutti(filtrati, "droniContainer");
 }
 
-const searchInput = document.getElementById('search-input');
-if (searchInput) {
-    searchInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            filtraDroni();
-        }
-    });
+// Aggiungi drone al carrello
+function add_to_carrel(id) {
+    droniCarrello = JSON.parse(localStorage.getItem('droniCarrello')) || [];
+
+    const droneSelezionato = droniElenco.find(d => d.id === id);
+    if (!droneSelezionato) return;
+
+    const index = droniCarrello.findIndex(d => d.id === id);
+
+    // Evita duplicati
+    if (!droniCarrello.some(d => d.id === id)) {
+        droniCarrello.push(droneSelezionato);
+        localStorage.setItem('droniCarrello', JSON.stringify(droniCarrello));
+    }
+}
+
+function apriDettagli(id) {
+    const drone = droniElenco.find(d => d.id === id);
+    localStorage.setItem("droneSelezionato", JSON.stringify(drone));
+    window.location.href = "dettagli.html";
+}
+
+// Listener per ricerca con Enter
+document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') filtraDroni();
+        });
+    }
+});
+
+function svuotaCarrello() {
+    // Svuota la variabile in memoria
+    droniCarrello = [];
+    
+    // Cancella dal localStorage
+    localStorage.removeItem('droniCarrello');
+
+    // Aggiorna l’interfaccia (es. bottoni +)
+    window.location.reload();
 }

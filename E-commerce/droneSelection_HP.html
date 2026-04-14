@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body align="center" style="background-color: white;">
+<body align="center" style="background-color: white;" id="pagina-selezione">
         <nav>
             <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
             <div class="name" id="greeting"><h2 style="font-family: Inter; font-size: 15px; color: black;" id="greeting"></h2></div>
@@ -67,6 +68,8 @@
 </body>
 <script src="E-commerceScript.js"></script>
 <script>
-    caricaDroni();
+    document.addEventListener("DOMContentLoaded", function() {
+            caricaDroni();
+    });
 </script>
 </html>

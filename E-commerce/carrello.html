@@ -1,29 +1,117 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            Carrello
-        </title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="carrelloCSS.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body align="center">
-        <nav>
-            <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
-            <ul>
-                <li><a href="E-commerceScript.js">Home</a></li>
-                <li><a href="droneSelection_HP.html">Prodotti</a></li>
-                <li><a href="carrello.html">Carrello</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carrelloCSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .btn-element{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 8%;
+            float: right;
+            border: 0px;
+            cursor: pointer;
+            height: auto;
+            padding: 5px 5px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            transition: background-color 0.1s ease-in-out, transform 0.2s ease-in-out;
+            justify-content: center;
+            z-index: 999;
+            margin-top: 30px;
+        }
+        .btn-element:hover{
+            background-color: cornflowerblue;
+            transform: scale(1.1);
+        }
+
+        .btn-element:active{
+            background-color: grey;
+        }
+        .btn-aligner{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body style="background-color: white;" align="center">
+
+    <nav>
+        <div class="logo"><img src="e-drone_logo.png" style="height: 90px; width: 90px;"></div>
+        <ul>
+            <li><a href="E_commerceHP.html">Home</a></li>
+            <li><a href="droneSelection_HP.html">Prodotti</a></li>
+            <li><a href="carrello.html">Carrello</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!--Azzera carrello-->
+    <button id="svuota" class="btn-element" onclick="svuotaCarrello()">Svuota</button>
+
+    <div class="carrelContainer" id="carrel-container"></div>
+
+    <div class="btn-aligner">
+        <button id="ricevuta" class="btn-element" onclick="apriRicevuta()">Ricevuta</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="col">
+                <h3>Azienda</h3>
+                <a href="catalogo.html">Prodotti</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="#">Lavora con noi</a>
             </div>
-        </nav>
-    </body>
-    <script src="E-commerceScript.js"></script>
+            <div class="col">
+                <h3>Supporto</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Assistenza</a>
+                <a href="#">Privacy</a>
+            </div>
+            <div class="col">
+                <h3>Social</h3>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+        <p class="copy">© Copyright E-drone s.r.l e-commerce company 2025</p>
+    </footer>
+
+    <script src="E-commerceScript.js" defer></script>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            caricaCarrello();
+        });
+
+        function caricaCarrello() {
+            const salvati = localStorage.getItem('droniCarrello');
+            if (salvati) {
+                droniCarrello = JSON.parse(salvati);
+                mostraTutti(droniCarrello, "carrel-container");
+            } else {
+                const container = document.getElementById("carrel-container");
+                if (container) container.innerHTML = '<div class="no-results">Il carrello è vuoto</div>';
+            }
+        }
+        function apriRicevuta() {
+            window.location.href = "ricevuta.html";
+        }
+    </script>
+</body>
 </html>

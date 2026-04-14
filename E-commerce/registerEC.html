@@ -41,13 +41,14 @@
         .loginDiv{
             background-color: white;
             width: 30%;
-            height: 90vh;
+            height: auto;
             padding: 20px 10px;
             display: flex;
             align-items: center;
             float: center;
             justify-content: center;
             border-radius: 10px;
+            margin-bottom: 30px;
         }
         @media screen and (max-width: 1000px){
             .loginDiv{
@@ -87,7 +88,7 @@
             border-radius: 10px;
             border: 2px solid lightgray;
             height: 32px;
-            width: 70%;
+            width: 80%;
             padding: 2px 5px;
             transition: width 0.2s ease-in-out;
         }
@@ -127,7 +128,7 @@
     </style>
     <body>
         <div class = "loginDiv">
-            <div align="center" style="width: 80%; height: 80vh;">
+            <div align="center" style="width: 80%; height: auto;">
                 <div style="margin-bottom: 30px;">
                     <h2>
                         Crea un account
@@ -140,7 +141,7 @@
                     <input type="inputElement" id="name" name="name" placeholder="Numero di telefono" required><br><br>
                     <input type="inputElement" id="name" name="name" placeholder="Indirizzo di spedizione" required><br><br>
                     <input type="inputElement" id="password" name="password" placeholder="La tua password" required><br><br>
-                    <input type="submit" id="password" value="Registrati" onclick="verificaDati()"><br>
+                    <input type="submit" id="password" value="Registrati" onclick="window.location.href='loginEC.html'"><br>
                     <h3>
                         o
                     </h3>

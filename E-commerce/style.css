@@ -1,112 +1,112 @@
-        body{
-            background-color: rgb(54, 54, 54);
-        }
-        h1{
-            color: white;
-            font-family: "Inter", sans-serif;
-            font-size: 90px;
-            margin: 0px, 0px;
-        }
-        h2{
-            font-family: "Inter", sans-serif;
-            color: white;
-            font-size: 20px;
-        }
-        .mainContainer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-            width: 100%;
-            padding: 0px 0px;
-        }
-        .mainContainer{
-            background-image: url(droneSfondo.png);
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 100%;
-        }
+body{
+    background-color: rgb(54, 54, 54);
+}
+h1{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 90px;
+    margin: 0px, 0px;
+}
+h2{
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 20px;
+}
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 0px 0px;
+}
+.mainContainer{
+    background-image: url(droneSfondo.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
 
-        .sectionHP{
-            background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0));
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            gap: 20px;
-            height: auto;
-            width: 100%;
-            padding: 110px 120px;
-        }
-        @media (max-width: 900px){
-            .sectionHP{
-                align-items: center;
-                justify-content: center;
-                padding: 80px 20px
-            }
-        }
-        .sectionP{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 30px;
-            background-color: white;
-            height: auto;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        .sectionPrincipal{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            height: auto;
-            width: 100%;
-            gap: 90px;
-        }
-        @media (max-width: 900px){
-            .sectionPrincipal{
-                flex-direction: column;
-            }
-        }
-        .mainDiv{
-            padding: 40px, 40px;
-            float: left;
-            height: auto;
-            width: 50%;
-        }
-        @media (max-width: 900px){
-            .mainDiv{
-                width: 90%;
-            }
-        }
-        .imgDiv{
-            padding-right: 30px;
-            float: right;
-            height: auto;
-            width: 40%;      
-        }
-        .mainDivElement{
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .startButton{
-            font-family: "Inter", sans-serif;
-            border-radius: 10px;
-            width: 170px;
-            height: 60px;
-            cursor: pointer;
-            background-color: rgb(100, 175, 237);
-            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
-            color: white;
-            border: 0px;
-            font-size: 20px;
-        }
-        .startButton:hover{
-            background-color: black;
-            transform: scale(1.1);
-        }
+.sectionHP{
+    background: linear-gradient(to right, #000000, rgba(0, 0, 0, 0));
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    gap: 20px;
+    height: auto;
+    width: 100%;
+    padding: 110px 120px;
+}
+@media (max-width: 900px){
+    .sectionHP{
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px
+    }
+}
+.sectionP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.sectionPrincipal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    gap: 90px;
+}
+@media (max-width: 900px){
+    .sectionPrincipal{
+        flex-direction: column;
+    }
+}
+.mainDiv{
+    padding: 40px, 40px;
+    float: left;
+    height: auto;
+    width: 50%;
+}
+@media (max-width: 900px){
+    .mainDiv{
+        width: 90%;
+    }
+}
+.imgDiv{
+    padding-right: 30px;
+    float: right;
+    height: auto;
+    width: 40%;      
+}
+.mainDivElement{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.startButton{
+    font-family: "Inter", sans-serif;
+    border-radius: 10px;
+    width: 170px;
+    height: 60px;
+    cursor: pointer;
+    background-color: rgb(100, 175, 237);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    color: white;
+    border: 0px;
+    font-size: 20px;
+}
+.startButton:hover{
+    background-color: black;
+    transform: scale(1.1);
+}
 .slide-in {
   opacity: 0;
   transform: translateX(200px);
@@ -345,6 +345,7 @@ nav li{
     margin-top: 60px;
 }
 .footer .container {
+    font-family: Inter;
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
@@ -588,6 +589,7 @@ nav li{
 
 /* Badge */
 .drone-badge {
+    font-family: calibri;
     position: absolute;
     top: 16px;
     right: 16px;
@@ -600,7 +602,6 @@ nav li{
     border-radius: 30px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    z-index: 2;
 }
 
 /* Info drone */
@@ -658,6 +659,35 @@ nav li{
     color: #94a3b8;
     align-self: flex-end;
     margin-bottom: 4px;
+}
+
+.add-to-carrel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8%;
+    float: right;
+    border: 0px;
+    cursor: pointer;
+    height: auto;
+    padding: 5px 5px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.1s ease-in-out, transform 0.2s ease-in-out;
+    margin-left: auto;
+    z-index: 999;
+}
+
+.add-to-carrel:hover{
+    background-color: cornflowerblue;
+    transform: scale(1.1);
+}
+
+.add-to-carrel:active{
+    background-color: grey;
 }
 
 /* Azioni */

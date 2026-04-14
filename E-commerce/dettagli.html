@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Drone</title>
+
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .card {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f5f5f5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        img { width: 100%; border-radius: 10px; }
+        h2 { text-align: center; }
+        .info { margin-top: 15px; }
+        .info p { margin: 5px 0; }
+    </style>
+</head>
+
+<body>
+
+<div class="card" id="droneCard"></div>
+
+<script>
+    // Recupera il drone dal localStorage
+    const drone = JSON.parse(localStorage.getItem("droneSelezionato"));
+
+    const container = document.getElementById("droneCard");
+
+    if (!drone) {
+        container.innerHTML = "<p>Nessun drone selezionato.</p>";
+    } else {
+        container.innerHTML = `
+            <h2>${drone.nome}</h2>
+            <img src="https://static.bhphotovideo.com/explora/sites/default/files/dji_mavic_pro_mavic_1.jpg">
+            <div class="info">
+                <p><strong>Marca:</strong> ${drone.marca}</p>
+                <p><strong>Modello:</strong> ${drone.modello}</p>
+                <p><strong>Prezzo:</strong> € ${drone.prezzo}</p>
+                <p><strong>Velocità:</strong> ${drone.velocita_kmh} km/h</p>
+                <p><strong>Batteria:</strong> ${drone.batteria_mAh} mAh</p>
+                <p><strong>Autonomia:</strong> ${drone.minuti_volo} minuti</p>
+                <p><strong>Descrizione:</strong> ${drone.descrizione}</p>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>

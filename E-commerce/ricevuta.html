@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ricevuta Acquisto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            width: 420px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .store-info {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        th, td {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .print-btn {
+            width: 100%;
+            padding: 10px;
+            background: #0078ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .print-btn:hover {
+            background: #005fcc;
+        }
+
+        .empty {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="receipt-container" id="receipt">
+    <h2>RICEVUTA</h2>
+
+    <div class="store-info">
+        E-DRONE s.r.l<br>
+        Via Roma 123, Milano<br>
+        P.IVA 12345678901
+    </div>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Prodotto</th>
+                <th>Prezzo (€)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="empty" id="emptyMsg" style="display:none;">
+        Nessun prodotto in ricevuta.
+    </div>
+
+    <div class="total" id="totalPrice">Totale: € 0.00</div>
+
+    <button class="print-btn" onclick="window.print()">Stampa PDF</button>
+</div>
+
+<script>
+    // Legge i prodotti dal localStorage (chiave ufficiale: droniCarrello)
+    const products = JSON.parse(localStorage.getItem("droniCarrello")) || [];
+
+    const tbody = document.querySelector("#productTable tbody");
+    const emptyMsg = document.getElementById("emptyMsg");
+    let total = 0;
+
+    if (!products.length) {
+        emptyMsg.style.display = "block";
+    } else {
+        products.forEach(p => {
+            const row = document.createElement("tr");
+
+            // prezzo può essere stringa: lo converto in numero
+            const prezzoNum = parseFloat(p.prezzo);
+
+            row.innerHTML = `
+                <td>${p.nome || "Prodotto"}</td>
+                <td>${isNaN(prezzoNum) ? "-" : prezzoNum.toFixed(2)}</td>
+            `;
+
+            tbody.appendChild(row);
+
+            if (!isNaN(prezzoNum)) {
+                total += prezzoNum;
+            }
+        });
+    }
+
+    document.getElementById("totalPrice").textContent = "Totale: € " + total.toFixed(2);
+</script>
+
+</body>
+</html>
